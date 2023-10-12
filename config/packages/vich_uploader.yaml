@@ -1,0 +1,25 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        Image:
+            uri_prefix: uploads/image
+            upload_destination: '%kernel.project_dir%/public/uploads/image'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update: false
+            delete_on_remove: false
+
+        Video:
+            uri_prefix: uploads/video
+            upload_destination: '%kernel.project_dir%/public/uploads/video'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update: false
+            delete_on_remove: false
+        
+        Files:
+            uri_prefix: uploads/files
+            upload_destination: '%kernel.project_dir%/public/uploads/files'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update: false
+            delete_on_remove: false
+
