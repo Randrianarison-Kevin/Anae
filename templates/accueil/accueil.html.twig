@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<section class="section gradient-banner">
+	<div class="p-5 text-center bg-image rounded-3" style="
+	    background-image: url('{{asset('image/hero1.jpg')}}');
+		background-size: 100% 100%;
+		height:400px;
+		background-repeat: no-repeat; 
+	  ">
+	  <div class="mask" >
+	    <div class="d-flex justify-content-center align-items-center h-100">
+	      <div class="text-white" style="margin-top: 100px;">
+	        <h1 class="mb-5">Agroécologie et développement local </br>Protection de l’environnement et développement rural</h1>
+	
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</section>
+<section class="section pt-0 position-relative pull-top" style="margin-top: -2%;">
+	<div class="container">
+		<div class="rounded shadow p-5 bg-white">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
+					<i class="fas fa-users fa-3x" style="color: #1EC11B;"></i>
+					<h3 class="mt-4 text-capitalize h5 ">Notre équipes</h3>
+				</div>
+				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
+					<i class="fas fa-handshake fa-3x " style="color: #1EC11B;"></i>
+					<h3 class="mt-4 text-capitalize h5 ">Affiliation</h3>
+				</div>
+				<div class="col-lg-4 col-md-12 mt-5 mt-lg-0 text-center">
+					<i class="fas fa-cogs fa-3x" style="color: #1EC11B;"></i>
+					<h3 class="mt-4 text-capitalize h5 ">Compétence</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="feature section pt-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 ml-auto justify-content-center">
+				
+				<div class="image-content">
+					<img class="img-fluid" src=" {{asset('image/mission2.jpg')}} " alt="mission" style = "border-radius: 15%; margin: 10% 0% 10% 4%; width: 90%;">
+				</div>
+			</div>
+			<div class="col-lg-6 mr-auto align-self-center"  style="display: flex; align-items: center;">
+				<div class="feature-content">
+					<h2 style="text-align: center;"> Missions</h2>
+					<p class="desc">L'A.N.A.E apporte sa contribution dans la mise en place d'une gestion durable des ressources naturelles et à l'amélioration du cadre de vie rural pour garantir à la fois le bien-être de l'écosystème et le bien-être humain.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="feature section pt-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 ml-auto align-self-center" style="display: flex; align-items: center;">
+				<div class="feature-content">
+					
+					<h2 style="text-align: center;">Objectifs</h2> 
+					<p class="desc">L'ANAE veut contribuer à la mise en place d'une gestion durable des ressources naturelles productives et à l'amélioration du cadre de vie rurale. Son domaine d'intervention se concentre autour de la conservation des eaux et des sols.</p>
+					
+				</div>
+				
+			</div>
+			<div class="col-lg-6 mr-auto justify-content-center">
+				<div class="image-content">
+					<img class="img-fluid" src=" {{asset('image/objectifs.jpg')}} " alt="Objectifs" style = "border-radius: 15%; width: 90%;">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="feature section pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 ml-auto justify-content-center">
+                <div class="image-content">
+                    <img class="img-fluid" src="{{asset('image/strategie.jpg')}}" alt="mission" style="border-radius: 15%; margin: 10% 0% 10% 4%; width: 90%; height: 350px;">
+                </div>
+            </div>
+            <div class="col-lg-6 mr-auto align-self-center" style="display: flex; align-items: center;">
+                <div class="feature-content">
+                    <h2 style="text-align: center;"> Approches strategiques</h2>
+                    <p class="desc">
+                        La mise en œuvre de toutes les activités est basée sur des approches stratégiques garantissant l'appropriation et la pérennisation, notamment :
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="feature section pt-0 text-center" style="background-color: #1EC11B; color: white; height:300px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12" style="margin:5% 0 5% 0;" >
+                
+					<h2 class="display-5">À propos</h2>
+                	<p style="margin:0 5% 0 5%; font-size: 18px;" >  
+                	    Créée en Novembre 1991 en vue de la promotion de la protection de l'environnement et du développement économique et social à Madagascar. L'ANAE se spécialise dans la lutte contre l'érosion, la conservation des eaux et des sols, et le développement rural.
+                	</p>
+					<a href="#" class="btn" style="margin-top:2%;background-color:#fff ;color: #1EC11B;">Voir plus</a>
+			</div>
+        </div>
+    </div>
+</section>
+{% endblock %}

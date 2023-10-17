@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i|Open+Sans:300,400,600,700,800");
+body {
+    font-family: "Open Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+h1, h2, h3, h4, h5 {
+    font-family: "Open Sans", sans-serif;
+    color: #000;
+    font-weight: 300;
+  }
+  
+h1 {
+    font-size: 45px;
+    line-height: 61px;
+  }
+  
+h2 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  
+h3 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+
+p, li, blockquote, label {
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 25px;
+    
+    margin-bottom: 0;
+  }
+  
+body {
+    overflow-x: hidden;
+  }
+a:focus,
+a:hover {
+    color: #1EC11B !important;
+    text-decoration: none;
+    
+  }
+.nav-link{
+    color: #000 !important;
+}
+
+.custom-toggler {
+    padding: 0.25rem 0.5rem !important; 
+    font-size: 1rem !important;  
+    color: white !important;
+}
+.custom{
+    color: #000 !important;
+}
+
+
+
