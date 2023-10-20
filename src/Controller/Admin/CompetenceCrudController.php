@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Competence;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
@@ -20,7 +21,7 @@ class CompetenceCrudController extends AbstractCrudController
         
            
         yield TextField::new('competence_nom');
-        yield TextEditorField::new('competence_contenu');
+        yield TextareaField::new('competence_contenu');
         
     }
    

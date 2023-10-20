@@ -21,12 +21,19 @@ class Projet
     #[ORM\OneToMany(mappedBy: 'Projets', targetEntity: Media::class)]
     private Collection $media;
 
+    #[ORM\OneToMany(mappedBy: 'Projets', targetEntity: Actualite::class)]
+    private Collection $actualites;
+
+    #[ORM\Column(length: 255)]
+    private ?string $Projet_titre = null;
+
     public function __construct()
     {
         $this->media = new ArrayCollection();
+        $this->actualites = new ArrayCollection();
     }
 
-    public function getProjetId(): ?int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -71,6 +78,53 @@ class Projet
         }
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Actualite>
+     */
+    public function getActualites(): Collection
+    {
+        return $this->actualites;
+    }
+
+    public function addActualite(Actualite $actualite): static
+    {
+        if (!$this->actualites->contains($actualite)) {
+            $this->actualites->add($actualite);
+            $actualite->setProjets($this);
+        }
+
+        return $this;
+    }
+
+    public function removeActualite(Actualite $actualite): static
+    {
+        if ($this->actualites->removeElement($actualite)) {
+            // set the owning side to null (unless already changed)
+            if ($actualite->getProjets() === $this) {
+                $actualite->setProjets(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getProjetTitre(): ?string
+    {
+        return $this->Projet_titre;
+    }
+
+    public function setProjetTitre(string $Projet_titre): static
+    {
+        $this->Projet_titre = $Projet_titre;
+
+        return $this;
+    }
+
+    public function __toString():string
+    {   
+        return $this->Projet_titre;
     }
 
 }

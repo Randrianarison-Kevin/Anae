@@ -2,15 +2,15 @@
 
 namespace App\Entity;
 
-use App\Model\TimestampedInterface;
 use App\Repository\ActualiteRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 #[ORM\Entity(repositoryClass: ActualiteRepository::class)]
-class Actualite implements TimestampedInterface
+class Actualite 
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -26,12 +26,20 @@ class Actualite implements TimestampedInterface
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;
 
-    #[ORM\Column]
-    private ?\DateTimeImmutable $updatedAt = null;
-
     #[ORM\OneToMany(mappedBy: 'Actualites', targetEntity: Media::class)]
     private Collection $media;
 
+    #[ORM\ManyToOne(inversedBy: 'actualites')]
+    private ?Projet $Projets = null;
+
+    #[ORM\ManyToOne(inversedBy: 'actualites')]
+    private ?Offre $Offres = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $Actualite_image = null;
+
+    #[Vich\UploadableField(mapping: 'Image', fileNameProperty: 'Actualite_image', size: 'Actualite_image')]
+    private ?File $Actualite_image_file = null;
 
     public function __construct()
     {
@@ -81,18 +89,6 @@ class Actualite implements TimestampedInterface
         return $this;
     }
 
-    public function getUpdatedAt(): ?\DateTimeImmutable
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(\DateTimeImmutable $updatedAt): static
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, Media>
      */
@@ -114,7 +110,7 @@ class Actualite implements TimestampedInterface
     public function removeMedium(Media $medium): static
     {
         if ($this->media->removeElement($medium)) {
-            // set the owning side to null (unless already changed)
+          
             if ($medium->getActualites() === $this) {
                 $medium->setActualites(null);
             }
@@ -122,4 +118,56 @@ class Actualite implements TimestampedInterface
 
         return $this;
     }
+
+    public function getProjets(): ?Projet
+    {
+        return $this->Projets;
+    }
+
+    public function setProjets(?Projet $Projets): static
+    {
+        $this->Projets = $Projets;
+
+        return $this;
+    }
+
+    public function getOffres(): ?Offre
+    {
+        return $this->Offres;
+    }
+
+    public function setOffres(?Offre $Offres): static
+    {
+        $this->Offres = $Offres;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->Actualite_titre;
+    }
+
+    public function getActualiteImage(): ?string
+    {
+        return $this->Actualite_image;
+    }
+
+    public function setActualiteImage(?string $Actualite_image): static
+    {
+        $this->Actualite_image = $Actualite_image;
+
+        return $this;
+    }
+    
+    public function getMediaPhotoFile(): ?File
+    {
+        return $this->Actualite_image_file;
+    }
+
+    public function setMediaPhotoFile(?File $Actualite_image_file = null): void
+    {
+        $this->Actualite_image_file = $Actualite_image_file;
+    }
+
 }

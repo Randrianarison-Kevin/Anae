@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\Offre;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
@@ -19,7 +20,7 @@ class OffreCrudController extends AbstractCrudController
     {
            
         yield TextField::new('Offre_titre');
-        yield TextEditorField::new('Offre_contenu');    
+        yield TextareaField::new('Offre_contenu');    
        
     }
     

@@ -17,6 +17,9 @@ class Media
     #[ORM\Column]
     private ?int $id = null;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $Media_description = null;
+
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $Media_photo = null;
 
@@ -28,7 +31,13 @@ class Media
 
     #[Vich\UploadableField(mapping: 'Video', fileNameProperty: 'Media_video', size: 'Media_video')]
     private ?File $Media_video_file = null;
-
+   
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $Media_document = null;
+    
+    #[Vich\UploadableField(mapping: 'Document')]
+    private ?File $Media_document_file = null;
+   
     #[ORM\ManyToOne(inversedBy: 'media')]
     private ?Actualite $Actualites = null;
 
@@ -38,12 +47,21 @@ class Media
     #[ORM\ManyToOne(inversedBy: 'media')]
     private ?Realisation $Realisations = null;
 
-    #[ORM\Column(type: Types::TEXT)]
-    private ?string $Description = null;
-
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->Media_description;
+    }
+
+    public function setDescription(string $Media_description): static
+    {
+        $this->Media_description = $Media_description;
+
+        return $this;
     }
 
     public function getMediaPhoto(): ?string
@@ -70,6 +88,18 @@ class Media
         return $this;
     }
 
+    public function getMediaDocument(): ?string
+    {
+        return $this->Media_document;
+    }
+
+    public function setMediaDocument(?string $Media_document): static
+    {
+        $this->Media_document = $Media_document;
+
+        return $this;
+    }
+
    
     public function getMediaVideoFile(): ?File
     {
@@ -91,6 +121,15 @@ class Media
         $this->Media_photo_file = $Media_photo_file;
     }
 
+    public function getMediaDocumentFile(): ?File
+    {
+        return $this->Media_document_file;
+    }
+
+    public function setMediaDocumentFile(?File $Media_document_file = null): void
+    {
+        $this->Media_document_file = $Media_document_file;
+    }
 
     public function getActualites(): ?Actualite
     {
@@ -124,18 +163,6 @@ class Media
     public function setRealisations(?Realisation $Realisations): static
     {
         $this->Realisations = $Realisations;
-
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->Description;
-    }
-
-    public function setDescription(string $Description): static
-    {
-        $this->Description = $Description;
 
         return $this;
     }

@@ -22,14 +22,15 @@ class Offre
     #[ORM\Column(type: Types::TEXT)]
     private ?string $Offre_contenu = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $Offre_fichier = null;
+    #[ORM\OneToMany(mappedBy: 'Offres', targetEntity: Actualite::class)]
+    private Collection $actualites;
 
     public function __construct()
     {
+        $this->actualites = new ArrayCollection();
     }
 
-    public function getOffreId(): ?int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -58,15 +59,39 @@ class Offre
         return $this;
     }
 
-    public function getOffreFichier(): ?string
+   
+
+    /**
+     * @return Collection<int, Actualite>
+     */
+    public function getActualites(): Collection
     {
-        return $this->Offre_fichier;
+        return $this->actualites;
     }
 
-    public function setOffreFichier(string $Offre_fichier): static
+    public function addActualite(Actualite $actualite): static
     {
-        $this->Offre_fichier = $Offre_fichier;
+        if (!$this->actualites->contains($actualite)) {
+            $this->actualites->add($actualite);
+            $actualite->setOffres($this);
+        }
 
         return $this;
+    }
+
+    public function removeActualite(Actualite $actualite): static
+    {
+        if ($this->actualites->removeElement($actualite)) {
+            // set the owning side to null (unless already changed)
+            if ($actualite->getOffres() === $this) {
+                $actualite->setOffres(null);
+            }
+        }
+
+        return $this;
+    }
+    public function __toString():string
+    {   
+        return $this->Offre_titre;
     }
 }

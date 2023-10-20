@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ Actualite.ActualiteTitre }} {% endblock %}
+{% block body %}
+<section class="section blog-single">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 m-auto">
+				
+				<article class="single-post">
+				
+					<div class="post-title text-center">
+						<h1> {{Actualite.ActualiteTitre}} </h1>
+						
+						<ul class="list-inline post-tag">
+							
+							
+							<li class="list-inline-item">
+								{{Actualite.CreatedAt|date('F d,Y')}}
+							</li>
+						</ul>
+					</div>
+					
+					<div class="post-body">
+						
+						<div class="feature-image">
+							<img class="img-fluid w-100"  src="/uploads/image/{{Actualite.ActualiteImage}}" style="height:500px;" alt="feature-image">
+						</div>
+						
+						<p> {{Actualite.ActualiteContenu}} </p>
+						
+					</div>
+				</article>
+				
+			</div>
+		</div>
+	</div>
+</section>
+   
+{% endblock %}
