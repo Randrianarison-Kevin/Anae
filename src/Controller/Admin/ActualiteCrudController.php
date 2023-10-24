@@ -31,8 +31,7 @@ class ActualiteCrudController extends AbstractCrudController
         yield ImageField::new('actualite_image')
         ->setBasePath('uploads/image')
         ->setUploadDir('public/uploads/image');
-        yield AssociationField::new('Projets');
-        yield AssociationField::new('Offres');
+
         yield DateTimeField::new( 'createdAt') 
             ->hideOnForm();
     }    

@@ -29,12 +29,6 @@ class Actualite
     #[ORM\OneToMany(mappedBy: 'Actualites', targetEntity: Media::class)]
     private Collection $media;
 
-    #[ORM\ManyToOne(inversedBy: 'actualites')]
-    private ?Projet $Projets = null;
-
-    #[ORM\ManyToOne(inversedBy: 'actualites')]
-    private ?Offre $Offres = null;
-
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $Actualite_image = null;
 
@@ -115,30 +109,6 @@ class Actualite
                 $medium->setActualites(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getProjets(): ?Projet
-    {
-        return $this->Projets;
-    }
-
-    public function setProjets(?Projet $Projets): static
-    {
-        $this->Projets = $Projets;
-
-        return $this;
-    }
-
-    public function getOffres(): ?Offre
-    {
-        return $this->Offres;
-    }
-
-    public function setOffres(?Offre $Offres): static
-    {
-        $this->Offres = $Offres;
 
         return $this;
     }

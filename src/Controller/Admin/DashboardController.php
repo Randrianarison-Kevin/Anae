@@ -7,11 +7,8 @@ use App\Entity\Affiliation;
 use App\Entity\Competence;
 use App\Entity\Equipe;
 use App\Entity\Media;
-use App\Entity\Offre;
-use App\Entity\Projet;
 use App\Entity\Realisation;
 use App\Entity\Vision;
-use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -46,8 +43,6 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Competence', 'fas fa-list',Competence::class);
         yield MenuItem::linkToCrud('Equipes', 'fas fa-list', Equipe::class);
         yield MenuItem::linkToCrud('Media', 'fas fa-list',Media::class);
-        yield MenuItem::linkToCrud('Offre', 'fas fa-list',Offre::class);
-        yield MenuItem::linkToCrud('Projet', 'fas fa-list',Projet::class);
         yield MenuItem::linkToCrud('Realisation', 'fas fa-list',Realisation::class);
         yield MenuItem::linkToCrud('Vision', 'fas fa-list',Vision::class);
         

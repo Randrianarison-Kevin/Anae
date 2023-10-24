@@ -30,7 +30,7 @@ class Realisation
         $this->media = new ArrayCollection();
     }
 
-    public function getRealisationId(): ?int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -87,5 +87,10 @@ class Realisation
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->Realisation_nom;
     }
 }

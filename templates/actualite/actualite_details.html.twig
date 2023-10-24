@@ -31,7 +31,15 @@
 						
 					</div>
 				</article>
-				
+	        		<div class="image-gallery">
+	
+						{% for media in Actualite.media %}
+                				{% if media.MediaPhoto %}
+                		    		<img src="/uploads/image/{{ asset(media.MediaPhoto) }}" alt="{{ media.description }}" />
+        	        			{% endif %}
+			
+        				{% endfor %}
+					</div>
 			</div>
 		</div>
 	</div>

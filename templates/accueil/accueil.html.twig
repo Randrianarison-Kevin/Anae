@@ -4,12 +4,16 @@
 
 {% block body %}
 <section class="section gradient-banner">
-	<div class="p-5 text-center bg-image rounded-3" style="
-	    background-image: url('{{asset('image/hero1.jpg')}}');
-		background-size: 100% 100%;
-		height:400px;
-		background-repeat: no-repeat; 
-	  ">
+
+	<div class="p-5 text-center bg-image rounded-3"  style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{asset('image/hero4.png')}}'); 
+	  background-size: cover; 
+	  background-position: center; 
+	  background-repeat: no-repeat; 
+	  background-attachment: fixed;
+	  height:450px;"> 
+
+
+	
 	  <div class="mask" >
 	    <div class="d-flex justify-content-center align-items-center h-100">
 	      <div class="text-white" style="margin-top: 100px;">
@@ -19,6 +23,7 @@
 	    </div>
 	  </div>
 	</div>
+
 </section>
 <section class="section pt-0 position-relative pull-top" style="margin-top: -2%;">
 	<div class="container">
