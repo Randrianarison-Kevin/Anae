@@ -3,9 +3,59 @@
 {% block title %}Réalisation{% endblock %}
 
 {% block body %}
-{% for Realisation in Realisations %}
-{{Realisation.RealisationNom}}
-{{Realisation.RealisationContenu}}
-{% endfor %}
+<section class="post-grid section pt-0">
+	<div class="container">
+		<div class="row">
+		
+			{% if pagination is empty %}
+				<div>
+					<p class="text-center fs-3" >Aucune réalisation pour l'instant</p>
+				</div>
+			{% else %}
+				<div class="container">
+        			<div class="row">
+            		{% for Realisation in pagination %}
+                		<div class="col-lg-4 col-md-6 mb-4">
+                		    <div class="card h-100" style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);" >
+								<img src="/uploads/image/{{ Realisation.RealisationPhoto }}" class="img-fluid" alt="Actualite Image" style=" width: 300px;height: 300px; object-fit: cover; display: block; margin: 0 auto;">
+								<div class="card-body">
+                            		<h5 class="card-title text-center">{{Realisation.RealisationNom}}</h5>
+                            		<p class="card-text text-justify">{{ Realisation.RealisationContenu|slice(0, 90) ~ ' ...' }}</p>
+									<div style="text-align: center;">
+										<style>
+											.savoir:hover{
+												color:black !important;
+											}
+										</style>
+
+                            			<a href="{{ path('app_realisation_details', {'id': Realisation.id}) }}" class="btn btn-light savoir" >En savoir plus</a>
+									</div>
+								</div>	
+                    		</div>
+                		</div>
+            		{% endfor %}
+					<div style="margin-left: 45%;">
+					<style>
+						a{
+							color:black	;
+							 text-decoration: none;
+						}
+						span{
+							margin:1%;
+						}
+						
+					</style>
+						{{ knp_pagination_render(pagination) }}
+					</div>
+					
+        			</div>
+    			</div>
+			{% endif %}
+
+		</div>
+	</div>
+</section>   
+
+
    
 {% endblock %}

@@ -20,6 +20,14 @@ class RealisationRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Realisation::class);
     }
+    
+    public function paginationQuery()
+    {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.id', 'ASC')
+            ->getQuery()
+        ;
+    }
 
 //    /**
 //     * @return Realisation[] Returns an array of Realisation objects

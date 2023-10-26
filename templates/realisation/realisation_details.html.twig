@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ Realisation.RealisationNom }} {% endblock %}
+{% block body %}
+<section class="section blog-single">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 m-auto">
+				
+				<article class="single-post">
+				
+					<div class="post-title text-center">
+						<h1> {{Realisation.RealisationNom}} </h1>
+					</div>
+					
+					<div class="post-body">
+						
+						<div class="feature-image">
+							<img class="img-fluid w-100"  src="/uploads/image/{{Realisation.RealisationPhoto}}" style="height:500px;" alt="feature-image">
+						</div>
+						
+						<p> {{Realisation.RealisationContenu}} </p>
+						
+					</div>
+				</article>
+	        		<div class="image-gallery">
+	
+						{% for media in Realisation.media %}
+                				{% if media.MediaPhoto %}
+                		    		<img src="/uploads/image/{{ asset(media.MediaPhoto) }}" alt="{{ media.description }}" />
+        	        			{% endif %}
+			
+        				{% endfor %}
+					</div>
+			</div>
+		</div>
+	</div>
+</section>
+   
+{% endblock %}

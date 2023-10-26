@@ -6,7 +6,10 @@ use App\Repository\RealisationRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: RealisationRepository::class)]
 class Realisation
@@ -24,6 +27,21 @@ class Realisation
 
     #[ORM\OneToMany(mappedBy: 'Realisations', targetEntity: Media::class)]
     private Collection $media;
+    
+    
+   
+    #[ORM\Column(length: 255)]
+    private ?string $Realisation_photo = null;
+
+    #[Assert\File(
+        maxSize: "10M",
+        mimeTypes: ["image/png", "image/jpg", "image/jpeg"],
+        maxSizeMessage: "Too big file, 10M is max.",
+        mimeTypesMessage: "Please use only images formats - png, jpj, jpeg",
+    )] 
+    #[Vich\UploadableField(mapping: 'Image', fileNameProperty: 'Realisation_photo', size: 'Realisation_photo')]
+    private ?File $realisation_photo_file = null;
+
 
     public function __construct()
     {
@@ -92,5 +110,27 @@ class Realisation
     public function __toString()
     {
         return $this->Realisation_nom;
+    }
+
+    public function getRealisationPhoto(): ?string
+    {
+        return $this->Realisation_photo;
+    }
+
+    public function setRealisationPhoto(string $Realisation_photo): static
+    {
+        $this->Realisation_photo = $Realisation_photo;
+
+        return $this;
+    }
+     
+    public function getRealisationPhotoFile(): ?File
+    {
+        return $this->realisation_photo_file;
+    }
+
+    public function setRealisationPhotoFile(?File $realisation_photo_file = null): void
+    {
+        $this->realisation_photo_file = $realisation_photo_file;
     }
 }
