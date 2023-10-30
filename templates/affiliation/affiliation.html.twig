@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AffiliationController!{% endblock %}
+
+{% block body %}
+{% for Affiliation in Affiliations %}
+
+    <img class="img-fluid w-50" src="/uploads/image/{{asset(Affiliation.AffiliationLogo)}}">
+    {{Affiliation.AffiliationNom}}
+{% endfor %}
+{% endblock %}

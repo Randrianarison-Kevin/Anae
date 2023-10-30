@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\AffiliationRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 #[ORM\Entity(repositoryClass: AffiliationRepository::class)]
 class Affiliation
@@ -16,7 +18,14 @@ class Affiliation
     #[ORM\Column(length: 255)]
     private ?string $Affiliation_nom = null;
 
-    public function getAffiliationId(): ?int
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $Affiliation_logo = null;
+
+    #[Vich\UploadableField(mapping: 'Image', fileNameProperty: 'Affiliation_logo', size: 'Affiliation_logo')]
+    private ?File $Affiliation_logo_file = null;
+
+
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -32,4 +41,27 @@ class Affiliation
 
         return $this;
     }
+
+    public function getAffiliationLogo(): ?string
+    {
+        return $this->Affiliation_logo;
+    }
+
+    public function setAffiliationLogo(?string $Affiliation_logo): static
+    {
+        $this->Affiliation_logo = $Affiliation_logo;
+
+        return $this;
+    }
+
+    public function getAffiliationLogoFile(): ?File
+    {
+        return $this->Affiliation_logo_file;
+    }
+
+    public function setAffiliationLogoFile(?File $Affiliation_logo_file = null): void
+    {
+        $this->Affiliation_logo_file = $Affiliation_logo_file;
+    }
+
 }
