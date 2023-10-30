@@ -5,7 +5,9 @@ namespace App\Entity;
 use App\Repository\EquipeRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 #[ORM\Entity(repositoryClass: EquipeRepository::class)]
 class Equipe
 {
@@ -17,6 +19,15 @@ class Equipe
     #[ORM\Column(length: 255)]
     private ?string $Equipe_photos = null;
 
+    #[Assert\File(
+        maxSize: "100M",
+        mimeTypes: ["image/png", "image/jpg", "image/jpeg"],
+        maxSizeMessage: "Too big file, 10M is max.",
+        mimeTypesMessage: "Please use only images formats - png, jpj, jpeg",
+    )] 
+    #[Vich\UploadableField(mapping: 'Image', fileNameProperty: 'Equipe_photos', size: 'Equipe_photos')]
+    private ?File $Equipe_photos_file = null;
+
     #[ORM\Column(length: 255)]
     private ?string $Equipe_nom = null;
 
@@ -26,7 +37,7 @@ class Equipe
     #[ORM\Column(type: Types::TEXT)]
     private ?string $Equipe_presentation = null;
 
-    public function getEquipeId(): ?int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -42,6 +53,17 @@ class Equipe
 
         return $this;
     }
+
+    public function getEquipePhotosFile(): ?File
+    {
+        return $this->Equipe_photos_file;
+    }
+
+    public function setEquipePhotosFile(?File $Equipe_photos_file = null): void
+    {
+        $this->Equipe_photos_file = $Equipe_photos_file;
+    }
+
 
     public function getEquipeNom(): ?string
     {

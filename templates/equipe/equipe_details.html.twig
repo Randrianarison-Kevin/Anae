@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EquipeController!{% endblock %}
+
+{% block body %}
+    <img class="img-fluid w-50" src="/uploads/image/{{Equipes.EquipePhotos}}">  
+    {{Equipes.EquipeNom}}
+    {{Equipes.EquipeFonctions}}
+    {{Equipes.EquipePresentation}}
+{% endblock %}

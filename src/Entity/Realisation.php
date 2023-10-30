@@ -34,7 +34,7 @@ class Realisation
     private ?string $Realisation_photo = null;
 
     #[Assert\File(
-        maxSize: "10M",
+        maxSize: "1000M",
         mimeTypes: ["image/png", "image/jpg", "image/jpeg"],
         maxSizeMessage: "Too big file, 10M is max.",
         mimeTypesMessage: "Please use only images formats - png, jpj, jpeg",

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EquipeController!{% endblock %}
+
+{% block body %}
+{% for Equipe in Equipes %}
+  <img class="img-fluid w-50" src="/uploads/image/{{Equipe.EquipePhotos}}">  
+  <a href="{{path('app_equipe_details', {'id':Equipe.id})}}">{{Equipe.EquipeNom}}</a>
+  <a href="{{path('app_equipe_details', {'id':Equipe.id})}}">{{Equipe.EquipeFonctions}}</a>
+{% endfor %}
+{% endblock %}
