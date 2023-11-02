@@ -23,19 +23,19 @@
 					
 					<div class="post-body">
 						
-						<div class="feature-image">
-							<img class="img-fluid w-100"  src="/uploads/image/{{Actualite.ActualiteImage}}" style="height:500px;" alt="feature-image">
+						<div class="feature-image d-flex justify-content-center align-items-center">
+							<img class="img-fluid w-50 h-50"  src="/uploads/image/{{Actualite.ActualiteImage}}" style="height:500px;" alt="feature-image">
 						</div>
 						
 						<p> {{Actualite.ActualiteContenu}} </p>
 						
 					</div>
 				</article>
-	        		<div class="image-gallery">
+	        		<div class="image-gallery" >
 	
 						{% for media in Actualite.media %}
                 				{% if media.MediaPhoto %}
-                		    		<img src="/uploads/image/{{ asset(media.MediaPhoto) }}" alt="{{ media.description }}" />
+                		    		<img data-aos="flip-right" data-aos-duration="3000" class="img-fluid w-25" src="/uploads/image/{{ asset(media.MediaPhoto) }}" alt="{{ media.description }}" />
         	        			{% endif %}
 			
         				{% endfor %}
