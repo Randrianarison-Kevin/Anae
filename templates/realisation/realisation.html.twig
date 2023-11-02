@@ -13,8 +13,9 @@
 				</div>
 			{% else %}
 				<div class="container">
-        			<div class="row">
-            		{% for Realisation in pagination %}
+        			<div class="row" data-aos="zoom-in-up" data-aos-duration="3000" style="margin:2% 0 2% 0;">
+					
+					{% for Realisation in pagination %}
                 		<div class="col-lg-4 col-md-6 mb-4">
                 		    <div class="card h-100" style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);" >
 								<img src="/uploads/image/{{ Realisation.RealisationPhoto }}" class="img-fluid" alt="Actualite Image" style=" width: 300px;height: 300px; object-fit: cover; display: block; margin: 0 auto;">
@@ -22,13 +23,11 @@
                             		<h5 class="card-title text-center">{{Realisation.RealisationNom}}</h5>
                             		<p class="card-text text-justify">{{ Realisation.RealisationContenu|slice(0, 90) ~ ' ...' }}</p>
 									<div style="text-align: center;">
-										<style>
-											.savoir:hover{
-												color:black !important;
-											}
-										</style>
-
-                            			<a href="{{ path('app_realisation_details', {'id': Realisation.id}) }}" class="btn btn-light savoir" >En savoir plus</a>
+										<div class="d-flex justify-content-center">
+											<a href="{{ path('app_realisation_details', {'id': Realisation.id}) }}" style="text-decoration: none; transition: all 0.4s ease; color: black" onmouseover="this.style.color='#1EC11B'" onmouseout="this.style.color='black'"> 
+												<ion-icon name="arrow-forward-outline"></ion-icon>En savoir plus
+											</a>
+										</div>
 									</div>
 								</div>	
                     		</div>

@@ -23,11 +23,7 @@
                             		<h5 class="card-title text-center">{{ Actualite.ActualiteTitre }}</h5>
                             		<p class="card-text text-justify">{{ Actualite.ActualiteContenu|slice(0, 90) ~ ' ...' }}</p>
 									<div style="text-align: center;">
-										<style>
-											.savoir:hover{
-												color:black !important;
-											}
-										</style>
+										
 										<div class="d-flex justify-content-center">
 											<a href="{{ path('app_actualite_details', {'id': Actualite.id}) }}" style="text-decoration: none; transition: all 0.4s ease; color: black" onmouseover="this.style.color='#1EC11B'" onmouseout="this.style.color='black'"> 
 												<ion-icon name="arrow-forward-outline"></ion-icon>En savoir plus
