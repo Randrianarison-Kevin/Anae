@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\CompetenceRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\DBAL\Types\Types;
 
 #[ORM\Entity(repositoryClass: CompetenceRepository::class)]
 class Competence
@@ -16,7 +17,7 @@ class Competence
     #[ORM\Column(length: 255)]
     private ?string $Competence_nom = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $Competence_contenu = null;
 
     public function getId(): ?int

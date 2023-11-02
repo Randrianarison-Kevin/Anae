@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CompetenceController!{% endblock %}
+{% block title %}Competence{% endblock %}
 
 {% block body %}
-{% for Competence in Competences %}
-    {{Competence.CompetenceNom}}
-    {{Competence.CompetenceContenu}}
-        
-{% endfor %}
+<div class="container">
+    {% for Competence in Competences %}
+        <h2 class="text-center">{{Competence.CompetenceNom}}</h2>
+        <p >{{Competence.CompetenceContenu}}<p>        
+    {% endfor %}
+
+</div>
+    
 {% endblock %}
