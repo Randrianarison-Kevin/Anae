@@ -4,7 +4,7 @@
 
 {% block body %}
 <section class="section gradient-banner" data-aos="zoom-in" data-aos-duration="2000">
-	<div class="hero" style="position: relative; color: #fff; text-align: center; padding: 100px 0; height:400px; background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)), url('{{asset('image/hero11.jpg')}}') ;background-repeat: no-repeat; background-position: center; background-size: cover;display: flex; align-items: center; justify-content: center;">
+	<div class="hero" style="object-fit:cover;position: relative; color: #fff; text-align: center; padding: 100px 0; height:400px; background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)), url('{{asset('image/hero11.jpg')}}') ;background-repeat: no-repeat; background-position: center; background-size: cover;display: flex; align-items: center; justify-content: center;">
 	    <div id="textCarousel" class="carousel slide" data-ride="carousel">
 			<div class="carousel-item active">                
 				<div class="slide-group">
@@ -68,7 +68,7 @@
 			<div class="col-lg-6 ml-auto justify-content-center">		
 				<div class="image-content" >
 					<div data-aos="fade-right" data-aos-duration="2000">	
-						<img class="img-fluid" src=" {{asset('image/mission3.jpg')}} " alt="mission" style = "border-radius: 15%; margin: 10% 0% 10% 4%; width: 90%;">
+						<img class="img-fluid ;" src=" {{asset('image/mission3.jpg')}} " alt="mission" style = "object-fit:cover;border-radius: 15%; margin: 10% 0% 10% 4%; width: 90%;">
 					</div>
 				</div>
 			</div>			
@@ -99,7 +99,7 @@
 			</div>
 			<div class="col-lg-6 mr-auto justify-content-center">
 				<div class="image-content" data-aos="fade-left" data-aos-duration="2000">
-					<img class="img-fluid" src=" {{asset('image/objectifs3.jpg')}} " alt="Objectifs" style = "border-radius: 15%; width: 90%;">
+					<img class="img-fluid" src=" {{asset('image/objectifs3.jpg')}} " alt="Objectifs" style = "object-fit:cover; border-radius: 15%; width: 90%;">
 				</div>
 			</div>
 		</div>
@@ -110,7 +110,7 @@
         <div class="row">
             <div class="col-lg-6 ml-auto justify-content-center">
                 <div class="image-content" data-aos="fade-right" data-aos-duration="2000">
-                    <img class="img-fluid" src="{{asset('image/Approche.jpg')}}" alt="mission" style="border-radius: 15%; margin: 10% 0% 10% 4%; width: 90%; height: 350px;">
+                    <img class="img-fluid" src="{{asset('image/Approche.jpg')}}" alt="mission" style="object-fit:cover;border-radius: 15%; margin: 10% 0% 10% 4%; width: 90%; height: 350px;">
                 </div>
             </div>
             <div class="col-lg-6 mr-auto align-self-center" style="display: flex; align-items: center;">

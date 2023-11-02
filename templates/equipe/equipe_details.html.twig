@@ -1,10 +1,41 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EquipeController!{% endblock %}
+{% block title %}{{Equipes.EquipeNom}}{% endblock %}
 
 {% block body %}
-    <img class="img-fluid w-50" src="/uploads/image/{{Equipes.EquipePhotos}}">  
-    {{Equipes.EquipeNom}}
-    {{Equipes.EquipeFonctions}}
-    {{Equipes.EquipePresentation}}
+<section class="section blog-single">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 m-auto">
+				
+				<article class="single-post">
+				
+					<div class="post-title text-center">
+						<h1> {{Equipes.EquipeNom}} </h1>
+						
+						<ul class="list-inline post-tag">
+							
+							
+							<li class="list-inline-item">
+								{{Equipes.EquipeFonctions}}
+							</li>
+						</ul>
+					</div>
+					
+					<div class="post-body">
+						
+						<div class="feature-image d-flex justify-content-center align-items-center">
+							<img class="img-fluid w-50"  src="/uploads/image/{{Equipes.EquipePhotos}}" style=" object-fit:cover;" alt="feature-image">
+						</div>
+						
+						<p>{{Equipes.EquipePresentation}} </p>
+						
+					</div>
+				</article>
+			</div>
+		</div>
+	</div>
+</section>
+   
+    
 {% endblock %}

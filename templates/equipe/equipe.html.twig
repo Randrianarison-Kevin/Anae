@@ -1,11 +1,41 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EquipeController!{% endblock %}
+{% block title %}Equipe{% endblock %}
 
 {% block body %}
-{% for Equipe in Equipes %}
-  <img class="img-fluid w-50" src="/uploads/image/{{Equipe.EquipePhotos}}">  
-  <a href="{{path('app_equipe_details', {'id':Equipe.id})}}">{{Equipe.EquipeNom}}</a>
-  <a href="{{path('app_equipe_details', {'id':Equipe.id})}}">{{Equipe.EquipeFonctions}}</a>
-{% endfor %}
+<div class="container">
+  <table class="table ">
+    <thead>
+        <tr>
+            <th class="border text-center">Photo</th>
+            <th class="border text-center">Nom</th>
+            <th class="border text-center">Fonctions</th>
+            <th class="border text-center">Presentation</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for Equipe in Equipes %}
+            <tr>
+                <td class="border" style="width: 25%; ">
+                    <img style="object-fit:cover;"class="img-fluid" src="/uploads/image/{{ Equipe.EquipePhotos }}">
+                </td>
+                <td class="border text-center align-middle" style="width: 20%; font-size: 1.5em;" >
+                    {{ Equipe.EquipeNom }}
+                </td>
+                <td class="border text-center align-middle" style="width: 20%; font-size: 1.5em;">
+                    {{ Equipe.EquipeFonctions }}
+                </td>
+                <td class="border text-center align-middle" style="width: 10%; font-size: 2em;">
+                  <a href="{{ path('app_equipe_details', {'id': Equipe.id}) }}"><ion-icon name="caret-forward-circle-outline"></ion-icon></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+</div>
+<style>
+  a{
+    color:black;
+  }
+</style>
 {% endblock %}
