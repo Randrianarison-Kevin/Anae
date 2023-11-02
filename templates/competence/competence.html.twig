@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CompetenceController!{% endblock %}
+
+{% block body %}
+{% for Competence in Competences %}
+    {{Competence.CompetenceNom}}
+    {{Competence.CompetenceContenu}}
+        
+{% endfor %}
+{% endblock %}

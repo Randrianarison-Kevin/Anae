@@ -19,7 +19,7 @@ class Competence
     #[ORM\Column(length: 255)]
     private ?string $Competence_contenu = null;
 
-    public function getCompetenceId(): ?int
+    public function getId(): ?int
     {
         return $this->id;
     }

@@ -37,24 +37,19 @@ p, li, blockquote, label {
 body {
     overflow-x: hidden;
   }
-a:focus,
-a:hover {
-    color: #1EC11B !important;
-    text-decoration: none;
-    
-  }
-.nav-link{
-    color: #000 !important;
+
+a{
+  text-decoration: none;
+  transition: all 0.4s ease;  
+  
 }
 
-.custom-toggler {
-    padding: 0.25rem 0.5rem !important; 
-    font-size: 1rem !important;  
-    color: white !important;
+
+
+img{
+  width:100%;
 }
-.custom{
-    color: #000 !important;
-}
+
 
 
 

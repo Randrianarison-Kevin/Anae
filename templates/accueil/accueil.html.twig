@@ -3,32 +3,49 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
-<section class="section gradient-banner">
+<section class="section gradient-banner" data-aos="zoom-in" data-aos-duration="2000">
+	<div class="hero" style="position: relative; color: #fff; text-align: center; padding: 100px 0; height:400px; background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)), url('{{asset('image/hero11.jpg')}}') ;background-repeat: no-repeat; background-position: center; background-size: cover;display: flex; align-items: center; justify-content: center;">
+	    <div id="textCarousel" class="carousel slide" data-ride="carousel">
+			<div class="carousel-item active">                
+				<div class="slide-group">
+					<p class="slide" style="font-size: 32px; font-weight:600;">Agroécologie et developpement local</p>
+		    	    <p class="slide" style="font-size: 32px; font-weight:600;">Protection de l'environnement et developpement rural</p>
+		    	</div>
+	        </div>
+			<div class="carousel-item">                
+				<div class="slide-group">
+		    	    <p class="slide" style="font-size: 32px; font-weight:600;">Agroécologie</p>
+					<p class="slide" style="font-size: 32px; font-weight:600;">Gestion durable des terres</p>
+		    	</div>
+	        </div>
+			<div class="carousel-item">
+	            <div class="slide-group">
+	                <p class="slide" style="font-size: 32px; font-weight:600;">Sécurité alimentaire</p>
+	                <p class="slide" style="font-size: 32px; font-weight:600;">Restauration et protection des ressources naturelles</p>
+	            </div>
+	        </div>
+	        <div class="carousel-item">
+	            <div class="slide-group">
+	                <p class="slide" style="font-size: 32px; font-weight:600;">Restauration forêts naturelles</p>
+	                <p class="slide" style="font-size: 32px; font-weight:600;">Protection et restauration de la biodiversité</p>
+	            </div>
+	        </div>
+			<div class="carousel-item">
+	            <div class="slide-group">
 
-	<div class="p-5 text-center bg-image rounded-3"  style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{asset('image/hero4.png')}}'); 
-	  background-size: cover; 
-	  background-position: center; 
-	  background-repeat: no-repeat; 
-	  background-attachment: fixed;
-	  height:450px;"> 
+	                <p class="slide" style="font-size: 32px; font-weight:600;">Protection de source</p>
+	                <p class="slide" style="font-size: 32px; font-weight:600;">Foyers améliorés et combustibles de substitution</p>
 
-
-	
-	  <div class="mask" >
-	    <div class="d-flex justify-content-center align-items-center h-100">
-	      <div class="text-white" style="margin-top: 100px;">
-	        <h1 class="mb-5">Agroécologie et développement local </br>Protection de l’environnement et développement rural</h1>
-	
-	      </div>
-	    </div>
-	  </div>
+	            </div>
+	        </div>
+		</div>
 	</div>
-
 </section>
-<section class="section pt-0 position-relative pull-top" style="margin-top: -2%;">
+<section class="section pt-0 position-relative pull-top" style="margin:2%;" >
 	<div class="container">
+	<h1 class="text-center" data-aos="fade-right" data-aos-duration="3000">Presentation</h1>
 		<div class="rounded shadow p-5 bg-white">
-			<div class="row">
+			<div class="row" data-aos="flip-right" data-aos-duration="3000">
 				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
 					<i class="fas fa-users fa-3x" style="color: #1EC11B;"></i>
 					<h3 class="mt-4 text-capitalize h5 "> <a href="{{ path('app_equipe') }}" style="color: black; text-decoration:none;"> Notre équipes </a></h3>
@@ -39,7 +56,7 @@
 				</div>
 				<div class="col-lg-4 col-md-12 mt-5 mt-lg-0 text-center">
 					<i class="fas fa-cogs fa-3x" style="color: #1EC11B;"></i>
-					<h3 class="mt-4 text-capitalize h5 ">Compétence</h3>
+					<h3 class="mt-4 text-capitalize h5 "> <a href="{{path('app_competence')}}" style="color: black; text-decoration:none;" > Compétence </a></h3>
 				</div>
 			</div>
 		</div>
@@ -48,17 +65,19 @@
 <section class="feature section pt-0">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6 ml-auto justify-content-center">
-				
-				<div class="image-content">
-					<img class="img-fluid" src=" {{asset('image/mission2.jpg')}} " alt="mission" style = "border-radius: 15%; margin: 10% 0% 10% 4%; width: 90%;">
+			<div class="col-lg-6 ml-auto justify-content-center">		
+				<div class="image-content" >
+					<div data-aos="fade-right" data-aos-duration="2000">	
+						<img class="img-fluid" src=" {{asset('image/mission3.jpg')}} " alt="mission" style = "border-radius: 15%; margin: 10% 0% 10% 4%; width: 90%;">
+					</div>
 				</div>
-			</div>
+			</div>			
 			<div class="col-lg-6 mr-auto align-self-center"  style="display: flex; align-items: center;">
-				<div class="feature-content">
-					<h2 style="text-align: center;"> Missions</h2>
+				<div class="feature-content" data-aos="fade-left" data-aos-duration="2000">
+					<h2 style="text-align: center;" > Missions</h2>
 					<p class="desc">L'A.N.A.E apporte sa contribution dans la mise en place d'une gestion durable des ressources naturelles et à l'amélioration du cadre de vie rural pour garantir à la fois le bien-être de l'écosystème et le bien-être humain.</p>
 				</div>
+
 			</div>
 		</div>
 	</div>
@@ -67,17 +86,20 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 ml-auto align-self-center" style="display: flex; align-items: center;">
-				<div class="feature-content">
-					
-					<h2 style="text-align: center;">Objectifs</h2> 
+				<div class="feature-content" data-aos="fade-right" data-aos-duration="2000">	
+					<h2 style="text-align: center;" >Objectifs</h2> 
 					<p class="desc">L'ANAE veut contribuer à la mise en place d'une gestion durable des ressources naturelles productives et à l'amélioration du cadre de vie rurale. Son domaine d'intervention se concentre autour de la conservation des eaux et des sols.</p>
-					
+					<div class="d-flex justify-content-center">
+						<a href="#" style="text-decoration: none; transition: all 0.4s ease; color: black" onmouseover="this.style.color='#1EC11B'" onmouseout="this.style.color='black'"> 
+							<ion-icon name="arrow-forward-outline"></ion-icon>Voir plus
+						</a>
+					</div>
 				</div>
 				
 			</div>
 			<div class="col-lg-6 mr-auto justify-content-center">
-				<div class="image-content">
-					<img class="img-fluid" src=" {{asset('image/objectifs.jpg')}} " alt="Objectifs" style = "border-radius: 15%; width: 90%;">
+				<div class="image-content" data-aos="fade-left" data-aos-duration="2000">
+					<img class="img-fluid" src=" {{asset('image/objectifs3.jpg')}} " alt="Objectifs" style = "border-radius: 15%; width: 90%;">
 				</div>
 			</div>
 		</div>
@@ -87,35 +109,50 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 ml-auto justify-content-center">
-                <div class="image-content">
-                    <img class="img-fluid" src="{{asset('image/strategie.jpg')}}" alt="mission" style="border-radius: 15%; margin: 10% 0% 10% 4%; width: 90%; height: 350px;">
+                <div class="image-content" data-aos="fade-right" data-aos-duration="2000">
+                    <img class="img-fluid" src="{{asset('image/Approche.jpg')}}" alt="mission" style="border-radius: 15%; margin: 10% 0% 10% 4%; width: 90%; height: 350px;">
                 </div>
             </div>
             <div class="col-lg-6 mr-auto align-self-center" style="display: flex; align-items: center;">
-                <div class="feature-content">
+                <div class="feature-content" data-aos="fade-left" data-aos-duration="2000">
                     <h2 style="text-align: center;"> Approches strategiques</h2>
-                    <p class="desc">
-                        La mise en œuvre de toutes les activités est basée sur des approches stratégiques garantissant l'appropriation et la pérennisation, notamment :
+                    <p class="desc" >
+                        La mise en œuvre de toutes les activités est basée sur des approches stratégiques garantissant l'appropriation et la pérennisation
                     </p>
-                    
+                    <div class="d-flex justify-content-center">
+						<a href="#" style="text-decoration: none; transition: all 0.4s ease; color: black" onmouseover="this.style.color='#1EC11B'" onmouseout="this.style.color='black'"> 
+							<ion-icon name="arrow-forward-outline"></ion-icon>Voir plus
+						</a>
+					</div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="feature section pt-0 text-center" style="background-color: #1EC11B; color: white; height:300px;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12" style="margin:5% 0 5% 0;" >
-                
-					<h2 class="display-5">À propos</h2>
-                	<p style="margin:0 5% 0 5%; font-size: 18px;" >  
-                	    Créée en Novembre 1991 en vue de la promotion de la protection de l'environnement et du développement économique et social à Madagascar. L'ANAE se spécialise dans la lutte contre l'érosion, la conservation des eaux et des sols, et le développement rural.
+<section class="feature section pt-0" style="margin-bottom:10%;">
+	<div class="container">
+	<h1 class="text-center " data-aos="fade-right" data-aos-duration="3000" style="margin: 5%;">A propos</h1>
+		<div class="row">
+			<div class="col-lg-6 ml-auto align-self-center" style="display: flex; align-items: center;">
+				<div class="feature-content" data-aos="fade-right" data-aos-duration="2000">	
+					
+					<p class="desc"> Créée en Novembre 1991 en vue de la promotion de la protection de l'environnement et du développement économique et social à Madagascar. L'ANAE se spécialise dans la lutte contre l'érosion, la conservation des eaux et des sols, et le développement rural.
                 	</p>
-					<a href="#" class="btn" style="margin-top:2%;background-color:#fff ;color: #1EC11B;">Voir plus</a>
+					<div class="d-flex justify-content-center">
+						<a href="#" style="text-decoration: none; transition: all 0.4s ease; color: black" onmouseover="this.style.color='#1EC11B'" onmouseout="this.style.color='black'"> 
+							<ion-icon name="arrow-forward-outline"></ion-icon>Voir plus
+						</a>
+					</div>
+				</div>
 			</div>
-        </div>
-    </div>
+			<div class="col-lg-6 mr-auto justify-content-center">
+				<div class="image-content" data-aos="fade-left" data-aos-duration="2000">
+					<img class="img-fluid" src=" {{asset('image/Apropos.jpg')}} " alt="Objectifs" style = "border-radius: 15%; width: 90%;">
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
+
 {% endblock %}

@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Welcome{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         <link href="{{asset('css/style.css')}}" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -11,6 +11,9 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        
+        
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -22,28 +25,27 @@
     <body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
         <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
             <div class="container ">
+        
                 <div class="d-flex justify-content-between align-items-center">
-                    <a class="navbar-brand" href="{{ path('app_accueil') }}"><img src="{{asset('image/logo.png')}}" alt="logo" class= "w-50 h-50"></a>
+                    <a class="navbar-brand" href="{{ path('app_accueil') }}"><img src="{{asset('image/logo.png')}}" alt="logo" class= "w-50"></a>
+        
                     <button class="navbar-toggler custom-toggler "  type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon" class="custom"></span>
                     </button> 
-
                 </div>
-                
-
                 <div class="collapse navbar-collapse" id="navbarNav" style= "text-align: center;" >
                 
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"  style="margin-right: 2%;">
-                            <a class="nav-link custom-menu" href="{{ path('app_accueil') }}">Accueil</a>
+                        <li class="nav-item"  style="margin-right: 10%;">
+                            <a class="nav-link" href="{{ path('app_accueil') }}">Accueil</a>
                         </li>
-                        <li class="nav-item" style="margin-right: 2%;">
+                        <li class="nav-item" style="margin-right: 10%;">
                             <a class="nav-link" href="{{ path('app_actualite') }}" >Actualités</a>
                         </li>
-                        <li class="nav-item" style="margin-right: 2%;"> 
+                        <li class="nav-item" style="margin-right: 10%;"> 
                             <a class="nav-link" href="{{ path('app_realisation') }}">Réalisation</a>
                         </li>
-                        <li class="nav-item" style="margin-right: 2%;">
+                        <li class="nav-item" style="margin-right: 10%;">
                             <a class="nav-link" href=" {{path('app_contact')}} ">Contact</a>
                         </li>
                     </ul>
@@ -57,7 +59,7 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-12 m-md-auto align-self-center">
                             <div class="block">
-                                <a href="#"><img src="image/logo.png" alt="footer-logo" class= "w-100 h-100"></a>
+                                <a href="{{ path('app_accueil') }}"><img src="image/logo.png" alt="logo" class= "w-100 h-100"></a>
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
@@ -92,6 +94,13 @@
                 <small class="text-white">&copy; <script>document.write(new Date().getFullYear())</script> Anae</small>
             </div>
         </footer>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 
     </body>
 </html>
