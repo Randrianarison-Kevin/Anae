@@ -1,11 +1,31 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AffiliationController!{% endblock %}
+{% block title %}Affiliation{% endblock %}
 
 {% block body %}
 {% for Affiliation in Affiliations %}
-
-    <img class="img-fluid w-50" src="/uploads/image/{{asset(Affiliation.AffiliationLogo)}}">
-    {{Affiliation.AffiliationNom}}
+<div class="container">
+  <table class="table ">
+    <thead>
+        <tr>
+            <th class="border text-center">Logo</th>
+            <th class="border text-center">Nom</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td class="border" style="width: 50%; ">
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <img style="object-fit:cover; "class="img-fluid w-25" src="/uploads/image/{{ Affiliation.AffiliationLogo}}">
+                </div>
+                </td>
+                <td class="border text-center align-middle" style="width: 50%; font-size: 1.5em;" >
+                   {{Affiliation.AffiliationNom}}
+                </td>
+            </tr>
+    
+    </tbody>
+  </table>
+</div>
 {% endfor %}
 {% endblock %}
