@@ -2,13 +2,63 @@
 
 {% block title %}Competence{% endblock %}
 
-{% block body %}
-<div class="container">
-    {% for Competence in Competences %}
-        <h2 class="text-center">{{Competence.CompetenceNom}}</h2>
-        <p >{{Competence.CompetenceContenu}}<p>        
-    {% endfor %}
 
+
+{% block body %}
+<style>
+        .accordion-button {
+            display: flex;
+            justify-content: space-between;
+            border: none;
+            text-align: left;
+            width: 100%;
+            padding: 10px;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        .accordion-content {
+            padding: 10px;
+            background-color: #ffffff;
+            display: none;
+            color: #808080;
+        }
+
+        .accordion-item.active .accordion-content {
+            display: block;
+        }
+    </style>
+<div class="container">
+    <div class="faq section pt-0">
+        <div class="row">
+            <div class="col-lg-10 m-auto">
+                <div class="block shadow">
+                    {% for Competence in Competences %}
+                        <div class="faq-item accordion-item " style="margin: 5%;">
+                            <div class="faq-item-title ">
+                                <h2 class="accordion-button "> 
+                                    <ion-icon name="chevron-down-outline"  style="margin-right: 5%;"></ion-icon>
+                                    {{ Competence.CompetenceNom }}
+                                </h2>
+                            </div>
+                            <div class="accordion-content">
+                                {{ Competence.CompetenceContenu|raw }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-    
+
+<script>
+    const accordionItems = document.querySelectorAll('.accordion-item');
+
+    accordionItems.forEach(item => {
+        item.querySelector('.accordion-button').addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
+</script>
 {% endblock %}
