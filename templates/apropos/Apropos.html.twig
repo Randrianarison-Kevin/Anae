@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A propos{% endblock %}
+
+{% block body %}
+<style>
+
+        .justified-text {
+            text-align: justify;
+        }
+    </style>
+ <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <img class="img-fluid" src="{{asset('image/Apropos.jpg')}}" alt="Objectifs" style="object-fit: cover; display: block; margin: 0 auto; max-width: 60%;">
+            </div>
+        </div>
+        <div class="row" style="margin:2%">
+            <div class="col-12">
+                <p class="justified-text">L'A.N.A.E est une Association privée à but non lucratif, créée en 1991 en vue de la promotion de la protection de l'environnement et du développement économique et social à Madagascar. Son organisation comprend un Conseil d'Administration composé d'organismes confessionnels, de personnes physiques, d'institution de recherche et d'organismes œuvrant dans le domaine de l'environnement et d'une Direction Générale responsable de toutes les activités opérationnelles.</p>
+                <h3 class="text-center">Son mandat</h3>
+                <p class="justified-text">L'ANAE se spécialise dans la lutte contre l'érosion, la conservation des eaux et des sols, et le développement rural. Elle entend promouvoir un processus de prise de conscience, de développement et de transfert de connaissances techniques et organisationnelles qui permettront à la population rurale d'améliorer leur capacité productive tout en protégeant l'environnement et en sauvegardant le sol.</p>
+                <p class="justified-text">L'Association, comme ses partenaires, mène des actions directes sur le terrain et assure la réalisation de projets avec le pool de compétences dont elle dispose. L'ANAE est un des partenaires du Ministère de l'Environnement, de l'écologie et des forêts pour la réalisation des projets de l'État dans le cadre de la convention sur la lutte contre la désertification.</p>
+                <h3 class="text-center">Statut juridique</h3>
+                <p>Association de droit malgache régie par l'ordonnance n°60 133 du 03 octobre 1960 suivant le récépissé n°90/355-FAR/ANT/AT/ASS du 13 novembre 1990 à Antananarivo</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
