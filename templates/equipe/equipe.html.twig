@@ -3,39 +3,37 @@
 {% block title %}Equipe{% endblock %}
 
 {% block body %}
-<div class="container">
-  <table class="table ">
-    <thead>
-        <tr>
-            <th class="border text-center">Photo</th>
-            <th class="border text-center">Nom</th>
-            <th class="border text-center">Fonctions</th>
-            <th class="border text-center">Presentation</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for Equipe in Equipes %}
-            <tr>
-                <td class="border" style="width: 25%; ">
-                    <img style="object-fit:cover;"class="img-fluid" src="/uploads/image/{{ Equipe.EquipePhotos }}">
-                </td>
-                <td class="border text-center align-middle" style="width: 20%; font-size: 1.5em;" >
-                    {{ Equipe.EquipeNom }}
-                </td>
-                <td class="border text-center align-middle" style="width: 20%; font-size: 1.5em;">
-                    {{ Equipe.EquipeFonctions }}
-                </td>
-                <td class="border text-center align-middle" style="width: 10%; font-size: 2em;">
-                  <a href="{{ path('app_equipe_details', {'id': Equipe.id}) }}"><ion-icon name="caret-forward-circle-outline"></ion-icon></a>
-                </td>
-            </tr>
-        {% endfor %}
-    </tbody>
-  </table>
-</div>
-<style>
-  a{
-    color:black;
-  }
-</style>
+<section class="post-grid section pt-0">
+	<div class="container">
+		<div class="row">
+      		<div class="container">
+        		<div class="row" data-aos="zoom-in-up" data-aos-duration="3000" style="margin:2% 0 2% 0;">
+					{% for Equipe in Equipes %}
+            			<div class="col-lg-4 col-md-6 mb-4">
+            	  			<div class="card h-100" style="border:none;" >
+								<img src="/uploads/image/{{ Equipe.EquipePhotos }}" class="img-fluid" alt="Actualite Image" style=" width: 300px;height: 300px; object-fit: cover; display: block; margin: 0 auto;">
+								<div class="card-body">
+            	      				<h4 class="card-title text-center">{{Equipe.EquipeNom}}</h4>
+									<h6> {{Equipe.EquipeFonctions}} </h6>
+            	    				<p class="card-text text-justify" style="color:#808080">{{ Equipe.EquipePresentation }}</p>			  
+								</div>				
+            				</div>
+          				</div>
+        			{% endfor %}
+					<style>
+						a{
+							color:black	;
+							 text-decoration: none;
+						}
+						span{
+							margin:1%;
+						}	
+					</style>			
+      			</div>
+    		</div>
+    	</div>
+	</div>
+</section>  
+
+
 {% endblock %}

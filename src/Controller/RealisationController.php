@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Media;
 use App\Entity\Realisation;
+use App\Repository\ImageRepository;
 use App\Repository\RealisationRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -25,21 +27,23 @@ class RealisationController extends AbstractController
         ]);
     }
     #[Route('/realisation/{id}', name: 'app_realisation_details')]
-    public function details(Realisation $realisation ): Response
+    public function details(Realisation $realisation): Response
     {
+      
         $medias = $realisation->getMedia();
+        
+        
+        $images = [];
+
+        foreach ($medias as $media) {
+            $images[$media->getId()] = $media->getImages();
+        }
         return $this->render('realisation/realisation_details.html.twig', [
             'Realisation'=>$realisation,
-            'medias' =>$medias
+            'medias' =>$medias,
+            'images' => $images,
+          
+            
         ]);
     }
-    //#[Route('/phpinfo', name: 'app_phpinfo')]
-    //public function phpInfo(): Response
-    //{
-    //    ob_start(); // Démarre la capture de sortie
-    //    phpinfo();    // Affiche les informations de configuration PHP
-    //    $phpinfo = ob_get_clean(); // Récupère la sortie et l'assigne à la variable $phpinfo
-
-    //    return new Response($phpinfo); // Affiche les informations PHP dans la réponse Symfony
-    //}
 }

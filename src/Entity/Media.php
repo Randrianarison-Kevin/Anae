@@ -3,10 +3,13 @@
 namespace App\Entity;
 
 use App\Repository\MediaRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints\Cascade;
 
 #[ORM\Entity(repositoryClass: MediaRepository::class)]
 #[Vich\Uploadable]
@@ -20,24 +23,20 @@ class Media
     #[ORM\Column(type: Types::TEXT)]
     private ?string $Media_description = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $Media_photo = null;
-
-    #[Vich\UploadableField(mapping: 'Image', fileNameProperty: 'Media_photo', size: 'Media_photo')]
-    private ?File $Media_photo_file = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $Media_document = null;
-    
-    #[Vich\UploadableField(mapping: 'Document')]
-    private ?File $Media_document_file = null;
-   
     #[ORM\ManyToOne(inversedBy: 'media')]
     private ?Actualite $Actualites = null;
 
 
     #[ORM\ManyToOne(inversedBy: 'media')]
     private ?Realisation $Realisations = null;
+
+    #[ORM\OneToMany(mappedBy: 'media', targetEntity: Image::class, orphanRemoval: true, cascade: ['persist'])]
+    private Collection $images;
+
+    public function __construct()
+    {
+        $this->images = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -56,49 +55,7 @@ class Media
         return $this;
     }
 
-    public function getMediaPhoto(): ?string
-    {
-        return $this->Media_photo;
-    }
-
-    public function setMediaPhoto(string $Media_photo): static
-    {
-        $this->Media_photo = $Media_photo;
-
-        return $this;
-    }
-
-    public function getMediaDocument(): ?string
-    {
-        return $this->Media_document;
-    }
-
-    public function setMediaDocument(?string $Media_document): static
-    {
-        $this->Media_document = $Media_document;
-
-        return $this;
-    }
-
-    public function getMediaPhotoFile(): ?File
-    {
-        return $this->Media_photo_file;
-    }
-
-    public function setMediaPhotoFile(?File $Media_photo_file = null): void
-    {
-        $this->Media_photo_file = $Media_photo_file;
-    }
-
-    public function getMediaDocumentFile(): ?File
-    {
-        return $this->Media_document_file;
-    }
-
-    public function setMediaDocumentFile(?File $Media_document_file = null): void
-    {
-        $this->Media_document_file = $Media_document_file;
-    }
+   
 
     public function getActualites(): ?Actualite
     {
@@ -123,4 +80,35 @@ class Media
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Image>
+     */
+    public function getImages(): Collection
+    {
+        return $this->images;
+    }
+
+    public function addImage(Image $image): static
+    {
+        if (!$this->images->contains($image)) {
+            $this->images->add($image);
+            $image->setMedia($this);
+        }
+
+        return $this;
+    }
+
+    public function removeImage(Image $image): static
+    {
+        if ($this->images->removeElement($image)) {
+            // set the owning side to null (unless already changed)
+            if ($image->getMedia() === $this) {
+                $image->setMedia(null);
+            }
+        }
+
+        return $this;
+    }
+   
 }

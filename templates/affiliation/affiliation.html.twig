@@ -4,28 +4,38 @@
 
 {% block body %}
 {% for Affiliation in Affiliations %}
-<div class="container">
-  <table class="table ">
-    <thead>
-        <tr>
-            <th class="border text-center">Logo</th>
-            <th class="border text-center">Nom</th>
-        </tr>
-    </thead>
-    <tbody>
-            <tr>
-                <td class="border" style="width: 50%; ">
-                <div style="display: flex; justify-content: center; align-items: center;">
-                    <img style="object-fit:cover; "class="img-fluid w-25" src="/uploads/image/{{ Affiliation.AffiliationLogo}}">
-                </div>
-                </td>
-                <td class="border text-center align-middle" style="width: 50%; font-size: 1.5em;" >
-                   {{Affiliation.AffiliationNom}}
-                </td>
-            </tr>
-    
-    </tbody>
-  </table>
-</div>
+<section class="post-grid section pt-0">
+	<div class="container">
+		<div class="row">
+      		<div class="container">
+        		<div class="row" data-aos="zoom-in-up" data-aos-duration="3000" style="margin:2% 0 2% 0;">
+					{% for Affiliation in Affiliations %}
+            			<div class="col-lg-4 col-md-6 mb-4">
+            	  			<div class="card h-100" style="border:none;" >
+								<img src="/uploads/image/{{ Affiliation.AffiliationLogo}}" class="img-fluid" alt="Actualite Image" style=" width: 300px;height: 300px; object-fit: cover; display: block; margin: 0 auto;">
+								<div class="card-body">
+            	      				<h4 class="card-title text-center">{{Affiliation.AffiliationNom}}</h4>
+								
+            	    				<p class="card-text text-justify" style="color:#808080"></p>			  
+								</div>				
+            				</div>
+          				</div>
+        			{% endfor %}
+					<style>
+						a{
+							color:black	;
+							 text-decoration: none;
+						}
+						span{
+							margin:1%;
+						}	
+					</style>			
+      			</div>
+    		</div>
+    	</div>
+	</div>
+</section>  
+
+
 {% endfor %}
 {% endblock %}

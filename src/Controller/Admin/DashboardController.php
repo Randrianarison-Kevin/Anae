@@ -6,6 +6,7 @@ use App\Entity\Actualite;
 use App\Entity\Affiliation;
 use App\Entity\Competence;
 use App\Entity\Equipe;
+use App\Entity\Image;
 use App\Entity\Media;
 use App\Entity\Realisation;
 use App\Entity\Vision;
@@ -44,7 +45,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Equipes', 'fas fa-list', Equipe::class);
         yield MenuItem::linkToCrud('Media', 'fas fa-list',Media::class);
         yield MenuItem::linkToCrud('Realisation', 'fas fa-list',Realisation::class);
-        yield MenuItem::linkToCrud('Vision', 'fas fa-list',Vision::class);
+        yield MenuItem::linkToCrud('Image', 'fas fa-image',Image::class);
         
         
     }    

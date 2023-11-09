@@ -29,9 +29,15 @@ class ActualiteController extends AbstractController
     public function details(Actualite $actualite ): Response
     {
         $medias = $actualite->getMedia();
+        $images = [];
+
+        foreach ($medias as $media) {
+            $images[$media->getId()] = $media->getImages();
+        }
         return $this->render('actualite/actualite_details.html.twig', [
             'Actualite'=>$actualite,
-            'medias' =>$medias
+            'medias' =>$medias,
+            'images' => $images,
         ]);
     }
 }

@@ -4,6 +4,8 @@ namespace App\Controller\Admin;
 
 use App\Entity\Media;
 use App\Field\VideoField;
+use App\Form\ImageType;
+use App\Form\MediaType;
 use App\Form\VideoType;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
@@ -24,13 +26,8 @@ class MediaCrudController extends AbstractCrudController
         
         yield TextField::new('Description');
 
-        yield ImageField::new('Media_photo')
-            ->setBasePath('uploads/image')
-            ->setUploadDir('public/uploads/image');
-        
-        yield ImageField::new('Media_document')
-            ->setBasePath('uploads/document')
-            ->setUploadDir('public/uploads/document');
+        yield CollectionField::new('images')
+            ->setEntryType(ImageType::class);
  
         yield AssociationField::new('Actualites');
         yield AssociationField::new('Realisations');

@@ -23,9 +23,9 @@
                             		<h5 class="card-title text-center">{{Realisation.RealisationNom}}</h5>
                             		<p class="card-text text-justify">{{ Realisation.RealisationContenu|slice(0, 90) ~ ' ...' }}</p>
 									<div style="text-align: center;">
-										<div class="d-flex justify-content-center">
+										<div class="d-flex justify-content-end">
 											<a href="{{ path('app_realisation_details', {'id': Realisation.id}) }}" style="text-decoration: none; transition: all 0.4s ease; color: black" onmouseover="this.style.color='#1EC11B'" onmouseout="this.style.color='black'"> 
-												<ion-icon name="arrow-forward-outline"></ion-icon>En savoir plus
+												<ion-icon name="arrow-forward-outline"></ion-icon>
 											</a>
 										</div>
 									</div>
