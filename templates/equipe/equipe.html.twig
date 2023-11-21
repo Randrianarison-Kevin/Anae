@@ -15,7 +15,9 @@
 								<div class="card-body">
             	      				<h4 class="card-title text-center">{{Equipe.EquipeNom}}</h4>
 									<h6> {{Equipe.EquipeFonctions}} </h6>
-            	    				<p class="card-text text-justify" style="color:#808080">{{ Equipe.EquipePresentation }}</p>			  
+            	    				<a href ={{ path('app_equipe_details', {'id': Equipe.id}) }}>
+										<p  class="card-text text-justify" style="color:#808080">{{ Equipe.EquipePresentation|slice(0, 80) ~ ' ...'}}</p>
+									</a>			  
 								</div>				
             				</div>
           				</div>
@@ -23,7 +25,10 @@
 					<style>
 						a{
 							color:black	;
-							 text-decoration: none;
+							text-decoration: none;
+						}
+						a:hover{
+							text-decoration: none;
 						}
 						span{
 							margin:1%;

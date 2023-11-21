@@ -14,6 +14,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Form\Type\TextEditorType;
 
 class ActualiteCrudController extends AbstractCrudController
 {
@@ -27,7 +28,7 @@ class ActualiteCrudController extends AbstractCrudController
     public function configureFields(string $pageName): iterable
     {
         yield TextField::new('actualite_titre');
-        yield TextareaField::new('actualite_contenu');
+        yield TextEditorField::new('actualite_contenu');
         yield ImageField::new('actualite_image')
         ->setBasePath('uploads/image')
         ->setUploadDir('public/uploads/image');

@@ -24,7 +24,7 @@ class RealisationCrudController extends AbstractCrudController
         
             
         yield TextField::new('Realisation_nom');
-        yield TextareaField::new('Realisation_contenu');
+        yield TextEditorField::new('Realisation_contenu');
         yield ImageField::new('Realisation_photo')
         ->setBasePath('uploads/image')
         ->setUploadDir('public/uploads/image');
