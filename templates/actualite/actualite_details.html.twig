@@ -35,7 +35,7 @@
 	
 						{% for media in medias %}
     						{% for image in images[media.getId()] %}
-    						    <img data-aos="flip-right" data-aos-duration="3000" class="img-fluid w-25" src="{{ '/uploads/image/' ~ image.getNom() }}"  alt="{{ media.getDescription() }}" />
+    						    <img data-aos="flip-right" data-aos-duration="3000" class="img-fluid w-25" style=" object-fit:cover;" src="{{ '/uploads/image/' ~ image.getNom() }}"  alt="{{ media.getDescription() }}" />
     						{% endfor %}
 						{% endfor %}
 					</div>

@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i|Open+Sans:300,400,600,700,800");
+* {
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.5px;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Open Sans", sans-serif;
+  color: #000;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: 45px;
+  line-height: 61px;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 50px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+p,
+li,
+blockquote,
+label {
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 25px;
+  margin-bottom: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.link {
+  position: relative;
+}
+
+.link:after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: -5px;
+  transition: 0.5s;
+}
+
+.link:hover:after {
+  width: 100%;
+}
+img {
+  width: 100%;
+}
+
+.navigation {
+  /* border: 1px solid blueviolet; */
+  display: block;
+  justify-content: end;
+}
+.containt {
+  /* border: 1px solid black; */
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+@media only screen and (max-width: 600px) {
+  .containt {
+    width: 95%;
+  }
+  .link:after {
+    width: 0;
+  }
+
+  .link:hover:after {
+    width: 0;
+  }
+}

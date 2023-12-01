@@ -1,199 +1,217 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Accueil
+{% endblock %}
 
 {% block body %}
-<section class="section gradient-banner" data-aos="zoom-in" data-aos-duration="2000">
-	<div class="hero" style="object-fit:cover;position: relative; color: #fff; text-align: center; padding: 100px 0; height:400px; background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)), url('{{asset('image/hero11.jpg')}}') ;background-repeat: no-repeat; background-position: center; background-size: cover;display: flex; align-items: center; justify-content: center;">
-	    <div id="textCarousel" class="carousel slide" data-ride="carousel">
-			<div class="carousel-item active">                
-				<div class="slide-group">
-					<p class="slide" style="font-size: 32px; font-weight:600;">Agroécologie et developpement local</p>
-		    	    <p class="slide" style="font-size: 32px; font-weight:600;">Protection de l'environnement et developpement rural</p>
-		    	</div>
-	        </div>
-			<div class="carousel-item">                
-				<div class="slide-group">
-		    	    <p class="slide" style="font-size: 32px; font-weight:600;">Agroécologie</p>
-					<p class="slide" style="font-size: 32px; font-weight:600;">Gestion durable des terres</p>
-		    	</div>
-	        </div>
-			<div class="carousel-item">
-	            <div class="slide-group">
-	                <p class="slide" style="font-size: 32px; font-weight:600;">Sécurité alimentaire</p>
-	                <p class="slide" style="font-size: 32px; font-weight:600;">Restauration et protection des ressources naturelles</p>
-	            </div>
-	        </div>
-	        <div class="carousel-item">
-	            <div class="slide-group">
-	                <p class="slide" style="font-size: 32px; font-weight:600;">Restauration forêts naturelles</p>
-	                <p class="slide" style="font-size: 32px; font-weight:600;">Protection et restauration de la biodiversité</p>
-	            </div>
-	        </div>
-			<div class="carousel-item">
-	            <div class="slide-group">
+	<section class="section gradient-banner" data-aos="zoom-in" data-aos-duration="2000">
+		<div class="hero" style="object-fit:cover;position: relative; color: #fff; text-align: center; padding: 100px 0; height:400px; background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)), url('{{asset('image/hero11.jpg')}}') ;background-repeat: no-repeat; background-position: center; background-size: cover;display: flex; align-items: center; justify-content: center;">
+			<div id="textCarousel" class="carousel slide" data-ride="carousel">
+				<div class= "carousel-inner">
+					<div class="carousel-item active">
+						<div class="slide-group">
+							<p class="slide" style="font-size: 32px; font-weight:600;">Agroécologie et developpement local</p>
+							<p class="slide" style="font-size: 32px; font-weight:600;">Protection de l'environnement et developpement rural</p>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="slide-group">
+							<p class="slide" style="font-size: 32px; font-weight:600;">Agroécologie</p>
+							<p class="slide" style="font-size: 32px; font-weight:600;">Gestion durable des terres</p>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="slide-group">
+							<p class="slide" style="font-size: 32px; font-weight:600;">Sécurité alimentaire</p>
+							<p class="slide" style="font-size: 32px; font-weight:600;">Restauration et protection des ressources naturelles</p>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="slide-group">
+							<p class="slide" style="font-size: 32px; font-weight:600;">Restauration forêts naturelles</p>
+							<p class="slide" style="font-size: 32px; font-weight:600;">Protection et restauration de la biodiversité</p>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="slide-group">
 
-	                <p class="slide" style="font-size: 32px; font-weight:600;">Protection de source</p>
-	                <p class="slide" style="font-size: 32px; font-weight:600;">Foyers améliorés et combustibles de substitution</p>
+							<p class="slide" style="font-size: 32px; font-weight:600;">Protection de source</p>
+							<p class="slide" style="font-size: 32px; font-weight:600;">Foyers améliorés et combustibles de substitution</p>
 
-	            </div>
-	        </div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
 		</div>
-	</div>
-</section>
-<section class="feature section pt-0" style="margin-bottom:10%;">
-	<div class="container">
-	<h1 class="text-center" data-aos="fade-right" data-aos-duration="3000" style="margin: 5%;">A propos</h1>
-		<div class="row">
-			<div class="col-lg-6 ml-auto align-self-center" style="display: flex; align-items: center;">
-				<div class="feature-content" data-aos="fade-right" data-aos-duration="2000">	
-					
-					<p class="desc"> Créée en Novembre 1991 en vue de la promotion de la protection de l'environnement et du développement économique et social à Madagascar. L'ANAE se spécialise dans la lutte contre l'érosion, la conservation des eaux et des sols, et le développement rural.
-                	</p>
-					<div class="d-flex justify-content-center">
-						<a href=" {{path('app_apropos')}} " style="text-decoration: none; transition: all 0.4s ease; color: black" onmouseover="this.style.color='#1EC11B'" onmouseout="this.style.color='black'"> 
-							<ion-icon name="chevron-down-outline"></ion-icon>
-						</a>
+	</section>
+	<section class="feature section pt-5" style="margin-bottom:10%;">
+		<div class="container">
+			<h1 class="text-center" data-aos="fade-right" data-aos-duration="3000" style="margin: 5%;">A propos</h1>
+			<div class="row">
+				<div class="col-lg-6 ml-auto align-self-center" style="display: flex; align-items: center;">
+					<div class="feature-content" data-aos="fade-right" data-aos-duration="2000">
+
+						<p class="desc">
+							Créée en Novembre 1991 en vue de la promotion de la protection de l'environnement et du développement économique et social à Madagascar. L'ANAE se spécialise dans la lutte contre l'érosion, la conservation des eaux et des sols, et le développement rural.
+						</p>
+						<div class="d-flex justify-content-center">
+							<a href=" {{path('app_apropos')}} " style="text-decoration: none; transition: all 0.4s ease; color: black" onmouseover="this.style.color='#1EC11B'" onmouseout="this.style.color='black'">
+								<ion-icon name="chevron-down-outline"></ion-icon>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 mr-auto justify-content-center">
+					<div class="image-content" data-aos="fade-left" data-aos-duration="2000">
+						<img class="img-fluid" src=" {{asset('image/Apropos.jpg')}} " alt="Objectifs" style="border-radius: 5%; object-fit:cover;	">
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-6 mr-auto justify-content-center">
-				<div class="image-content" data-aos="fade-left" data-aos-duration="2000">
-					<img class="img-fluid" src=" {{asset('image/Apropos.jpg')}} " alt="Objectifs" style = "border-radius: 15%; object-fit:cover;	">
-				</div>
-			</div>
 		</div>
-	</div>
-</section>
-<section class="section pt-0 position-relative pull-top" style="margin:2%;" >
-	<div class="container">
-	<h1 class="text-center" data-aos="fade-right" data-aos-duration="3000">Presentation</h1>
-		<div class="rounded shadow p-5 bg-white">
-			<div class="row" data-aos="flip-right" data-aos-duration="3000">
-				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
-					<i class="fas fa-users fa-3x" style="color: #1EC11B;"></i>
-					<h3 class="mt-4 text-capitalize h5 "> <a href="{{ path('app_equipe') }}" style="color: black; text-decoration:none;"> Notre équipes </a></h3>
-				</div>
-				<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
-					<i class="fas fa-handshake fa-3x " style="color: #1EC11B;"></i>
-					<h3 class="mt-4 text-capitalize h5 "> <a href="{{ path('app_affiliation') }}" style="color: black; text-decoration:none;"> Affiliation </a></h3>
-				</div>
-				<div class="col-lg-4 col-md-12 mt-5 mt-lg-0 text-center">
-					<i class="fas fa-cogs fa-3x" style="color: #1EC11B;"></i>
-					<h3 class="mt-4 text-capitalize h5 "> <a href="{{path('app_competence')}}" style="color: black; text-decoration:none;" > Compétence </a></h3>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-<section class="feature section pt-0">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-6 ml-auto justify-content-center">		
-				<div class="image-content" >
-					<div data-aos="fade-right" data-aos-duration="2000">	
-						<img class="img-fluid ;" src=" {{asset('image/mission3.jpg')}} " alt="mission" style = "object-fit:cover;border-radius: 15%; margin: 10% 0% 10% 4%; width: 90%;">
+	</section>
+	<section class="section pt-0 position-relative pull-top" style="margin:2%;">
+		<div class="container">
+			<h1 class="text-center" data-aos="fade-right" data-aos-duration="3000">Presentation</h1>
+			<div class="rounded shadow p-5 bg-white">
+				<div class="row" data-aos="flip-right" data-aos-duration="3000">
+					<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
+						<i class="fas fa-users fa-3x" style="color: #1EC11B;"></i>
+						<h3 class="mt-4 text-capitalize h5 ">
+							<a href="{{ path('app_equipe') }}" style="color: black; text-decoration:none;">
+								Notre équipes
+							</a>
+						</h3>
+					</div>
+					<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
+						<i class="fas fa-handshake fa-3x " style="color: #1EC11B;"></i>
+						<h3 class="mt-4 text-capitalize h5 ">
+							<a href="{{ path('app_affiliation') }}" style="color: black; text-decoration:none;">
+								Affiliation
+							</a>
+						</h3>
+					</div>
+					<div class="col-lg-4 col-md-12 mt-5 mt-lg-0 text-center">
+						<i class="fas fa-cogs fa-3x" style="color: #1EC11B;"></i>
+						<h3 class="mt-4 text-capitalize h5 ">
+							<a href="{{path('app_competence')}}" style="color: black; text-decoration:none;">
+								Compétence
+							</a>
+						</h3>
 					</div>
 				</div>
-			</div>			
-			<div class="col-lg-6 mr-auto align-self-center"  style="display: flex; align-items: center;">
-				<div class="feature-content" data-aos="fade-left" data-aos-duration="2000">
-					<h2 style="text-align: center;" > Missions</h2>
-					<p class="desc" style="color:#808080">L'A.N.A.E apporte sa contribution dans la mise en place d'une gestion durable des ressources naturelles et à l'amélioration du cadre de vie rural pour garantir à la fois le bien-être de l'écosystème et le bien-être humain.</p>
-				</div>
-
 			</div>
 		</div>
-	</div>
-</section>
-<section class="feature section pt-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 ml-auto align-self-center" style="display: flex; align-items: center;">
-                    <div class="feature-content" data-aos="fade-right" data-aos-duration="2000">	
-                        <h2 style="text-align: center;" >Objectifs</h2> 
-                        <p class="desc"  style="color:#808080">L'ANAE veut contribuer à la mise en place d'une gestion durable des ressources naturelles productives et à l'amélioration du cadre de vie rurale. Son domaine d'intervention se concentre autour de la conservation des eaux et des sols.</p>
-                        <div class="d-flex justify-content-center">
-                            <a href="javascript:void(0)" id="toggleAccordion1" style="text-decoration: none; color: black;">
-                                <ion-icon id="accordionIcon1" name="chevron-down-outline"  style="color:#808080"></ion-icon>
-                            </a>
-                        </div>
-                        <ul id="accordion1" style="display: none " data-aos="fade-up" data-aos-duration="1000">
-                            <li  style="color:#808080">promouvoir des techniques d'aménagement et d'exploitation des sols respectueuses de l'environnement</li>
-                            <li  style="color:#808080">encourager la rationalisation de l'occupation et de l'utilisation des sols</li>
-                            <li  style="color:#808080">promouvoir la maîtrise et la gestion des ressources naturelles par la population</li>
-                            <li  style="color:#808080">soutenir l'augmentation de la production et des revenus agricoles</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-6 mr-auto justify-content-center">
-                    <div class="image-content" data-aos="fade-left" data-aos-duration="2000">
-                        <img class="img-fluid" src="{{ asset('image/objectifs3.jpg') }}" alt="Objectifs" style="object-fit: cover; border-radius: 15%; width: 90%;">
-                    </div>
-                </div>
-            </div>
-        </div>
-</section>
-<section class="feature section pt-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mr-auto justify-content-center">
-                    <div class="image-content" data-aos="fade-left" data-aos-duration="2000">
-                        <img class="img-fluid" src="{{ asset('image/Approche.jpg') }}" alt="Objectif4" style="object-fit: cover; border-radius: 15%; width: 90%;">
-                    </div>
-                </div>
-                <div class="col-lg-6 ml-auto align-self-center" style="display: flex; align-items: center;">
-                    <div class="feature-content" data-aos="fade-right" data-aos-duration="2000">
-                        <h2 style="text-align: center;">Approches Stratégiques</h2>
-						<p class="desc"  style="color:#808080">La mise en œuvre de toutes les activités est basée sur des approches stratégiques garantissant l'appropriation et la pérennisation, notamment :</p>
-                        <div class="d-flex justify-content-center">
-                            <a href="javascript:void(0)" id="toggleAccordion2" style="text-decoration: none; color: black;">
-                                <ion-icon id="accordionIcon2" name="chevron-down-outline"  style="color:#808080"></ion-icon>
-                            </a>
-                        </div>
-                        <ul id="accordion2" style="display: none" data-aos="fade-down" data-aos-duration="1000">
-                            <li  style="color:#808080">L'approche participative impliquant toutes les parties prenantes (communautés, autorités à tous les niveaux, services techniques déconcentrés) depuis l'identification des activités en passant par la réalisation jusqu'au suivi-évaluation.</li>
-                            <li  style="color:#808080">L'approche genre incitant la participation massive des femmes dans toutes les étapes de réalisation des activités.</li>
-                            <li  style="color:#808080">L'approche filière basée sur l'identification des filières porteuses et l'orientation vers le marché.</li>
-                            <li  style="color:#808080">Les actions de communication sur toute activité à entreprendre à travers l'organisation de journées d'information-sensibilisation sur les thèmes véhiculés. Des supports audio-visuels (photos, brochures, posters, films) sont utilisés afin de faciliter la compréhension des messages par les cibles.</li>
-                            <li  style="color:#808080">Le renforcement de capacités technique et organisationnelle des communautés cibles : ce transfert effectif des compétences est primordial pour prétendre à une autonomie des bénéficiaires et par la suite à une pérennisation des actions menées. Par ailleurs, l'appui socio-organisationnel est indispensable pour s'assurer du bon fonctionnement des associations, pour faire face aux exigences du marché et garantir des justes prix des produits agricoles.</li>
-                            <li  style="color:#808080">Le système d'encadrement de proximité des communautés dans la mise en œuvre des activités : des paysans innovants et dynamiques bénéficient d'appuis techniques permanents pour leur permettre de bien maîtriser les techniques et d'encadrer par la suite, les autres paysans environnants de leurs villages.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-</section>
+	</section>
+	<section class="feature section pt-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 ml-auto justify-content-center">
+					<div class="image-content">
+						<div data-aos="fade-right" data-aos-duration="2000">
+							<img class="img-fluid" src=" {{asset('image/mission3.jpg')}} " alt="mission" style="object-fit:cover;border-radius: 15%; margin: 10% 0% 10% 4%; width: 90%;">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 mr-auto align-self-center" style="display: flex; align-items: center;">
+					<div class="feature-content" data-aos="fade-left" data-aos-duration="2000">
+						<h2 style="text-align: center;">
+							Missions</h2>
+						<p class="desc" style="color:#808080">L'A.N.A.E apporte sa contribution dans la mise en place d'une gestion durable des ressources naturelles et à l'amélioration du cadre de vie rural pour garantir à la fois le bien-être de l'écosystème et le bien-être humain.</p>
+					</div>
 
-<script>
-        const toggleAccordion1 = document.getElementById('toggleAccordion1');
-        const accordion1 = document.getElementById('accordion1');
-        const accordionIcon1 = document.getElementById('accordionIcon1');
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="feature section pt-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 ml-auto align-self-center" style="display: flex; align-items: center;">
+					<div class="feature-content" data-aos="fade-right" data-aos-duration="2000">
+						<h2 style="text-align: center;">Objectifs</h2>
+						<p class="desc" style="color:#808080">L'ANAE veut contribuer à la mise en place d'une gestion durable des ressources naturelles productives et à l'amélioration du cadre de vie rurale. Son domaine d'intervention se concentre autour de la conservation des eaux et des sols.</p>
+						<div class="d-flex justify-content-center">
+							<a href="javascript:void(0)" id="toggleAccordion1" style="text-decoration: none; color: black;">
+								<ion-icon id="accordionIcon1" name="chevron-down-outline" style="color:#808080"></ion-icon>
+							</a>
+						</div>
+						<ul id="accordion1" style="display: none " data-aos="fade-up" data-aos-duration="1000">
+							<li style="color:#808080">promouvoir des techniques d'aménagement et d'exploitation des sols respectueuses de l'environnement</li>
+							<li style="color:#808080">encourager la rationalisation de l'occupation et de l'utilisation des sols</li>
+							<li style="color:#808080">promouvoir la maîtrise et la gestion des ressources naturelles par la population</li>
+							<li style="color:#808080">soutenir l'augmentation de la production et des revenus agricoles</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-6 mr-auto justify-content-center">
+					<div class="image-content" data-aos="fade-left" data-aos-duration="2000">
+						<img class="img-fluid" src="{{ asset('image/objectifs3.jpg') }}" alt="Objectifs" style="object-fit: cover; border-radius: 15%; width: 90%;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="feature section pt-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 mr-auto justify-content-center">
+					<div class="image-content" data-aos="fade-left" data-aos-duration="2000">
+						<img class="img-fluid" src="{{ asset('image/Approche.jpg') }}" alt="Objectif4" style="object-fit: cover; border-radius: 15%; width: 90%;">
+					</div>
+				</div>
+				<div class="col-lg-6 ml-auto align-self-center" style="display: flex; align-items: center;">
+					<div class="feature-content" data-aos="fade-right" data-aos-duration="2000">
+						<h2 style="text-align: center;">Approches Stratégiques</h2>
+						<p class="desc" style="color:#808080">La mise en œuvre de toutes les activités est basée sur des approches stratégiques garantissant l'appropriation et la pérennisation, notamment :</p>
+						<div class="d-flex justify-content-center">
+							<a href="javascript:void(0)" id="toggleAccordion2" style="text-decoration: none; color: black;">
+								<ion-icon id="accordionIcon2" name="chevron-down-outline" style="color:#808080"></ion-icon>
+							</a>
+						</div>
+						<ul id="accordion2" style="display: none" data-aos="fade-down" data-aos-duration="1000">
+							<li style="color:#808080">L'approche participative impliquant toutes les parties prenantes (communautés, autorités à tous les niveaux, services techniques déconcentrés) depuis l'identification des activités en passant par la réalisation jusqu'au suivi-évaluation.</li>
+							<li style="color:#808080">L'approche genre incitant la participation massive des femmes dans toutes les étapes de réalisation des activités.</li>
+							<li style="color:#808080">L'approche filière basée sur l'identification des filières porteuses et l'orientation vers le marché.</li>
+							<li style="color:#808080">Les actions de communication sur toute activité à entreprendre à travers l'organisation de journées d'information-sensibilisation sur les thèmes véhiculés. Des supports audio-visuels (photos, brochures, posters, films) sont utilisés afin de faciliter la compréhension des messages par les cibles.</li>
+							<li style="color:#808080">Le renforcement de capacités technique et organisationnelle des communautés cibles : ce transfert effectif des compétences est primordial pour prétendre à une autonomie des bénéficiaires et par la suite à une pérennisation des actions menées. Par ailleurs, l'appui socio-organisationnel est indispensable pour s'assurer du bon fonctionnement des associations, pour faire face aux exigences du marché et garantir des justes prix des produits agricoles.</li>
+							<li style="color:#808080">Le système d'encadrement de proximité des communautés dans la mise en œuvre des activités : des paysans innovants et dynamiques bénéficient d'appuis techniques permanents pour leur permettre de bien maîtriser les techniques et d'encadrer par la suite, les autres paysans environnants de leurs villages.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-        toggleAccordion1.addEventListener('click', () => {
-            if (accordion1.style.display === 'none' || accordion1.style.display === '') {
-                accordion1.style.display = 'block';
-                accordionIcon1.setAttribute('name', 'chevron-up-outline');
-            } else {
-                accordion1.style.display = 'none';
-                accordionIcon1.setAttribute('name', 'chevron-down-outline');
-            }
-        });
+	<script>
+		const toggleAccordion1 = document.getElementById('toggleAccordion1');
+const accordion1 = document.getElementById('accordion1');
+const accordionIcon1 = document.getElementById('accordionIcon1');
 
-        const toggleAccordion2 = document.getElementById('toggleAccordion2');
-        const accordion2 = document.getElementById('accordion2');
-        const accordionIcon2 = document.getElementById('accordionIcon2');
+toggleAccordion1.addEventListener('click', () => {
+if (accordion1.style.display === 'none' || accordion1.style.display === '') {
+accordion1.style.display = 'block';
+accordionIcon1.setAttribute('name', 'chevron-up-outline');
+} else {
+accordion1.style.display = 'none';
+accordionIcon1.setAttribute('name', 'chevron-down-outline');
+}
+});
 
-        toggleAccordion2.addEventListener('click', () => {
-            if (accordion2.style.display === 'none' || accordion2.style.display === '') {
-                accordion2.style.display = 'block';
-                accordionIcon2.setAttribute('name', 'chevron-up-outline');
-            } else {
-                accordion2.style.display = 'none';
-                accordionIcon2.setAttribute('name', 'chevron-down-outline');
-            }
-        });
-</script>
+const toggleAccordion2 = document.getElementById('toggleAccordion2');
+const accordion2 = document.getElementById('accordion2');
+const accordionIcon2 = document.getElementById('accordionIcon2');
+
+toggleAccordion2.addEventListener('click', () => {
+if (accordion2.style.display === 'none' || accordion2.style.display === '') {
+accordion2.style.display = 'block';
+accordionIcon2.setAttribute('name', 'chevron-up-outline');
+} else {
+accordion2.style.display = 'none';
+accordionIcon2.setAttribute('name', 'chevron-down-outline');
+}
+});
+	</script>
 
 
 {% endblock %}

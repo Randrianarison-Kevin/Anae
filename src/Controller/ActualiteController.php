@@ -21,6 +21,8 @@ class ActualiteController extends AbstractController
             $request->query->get('page', 1),
             3
         );
+
+        
         return $this->render('actualite/actualite.html.twig', [
             'pagination'=>$pagination
         ]);

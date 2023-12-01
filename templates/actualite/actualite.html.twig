@@ -1,60 +1,55 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Actualite{% endblock %}
+{% block title %}Actualite
+{% endblock %}
 
 
 {% block body %}
-<section class="post-grid section pt-0">
-	<div class="container"  >
-		<div class="row" style="margin:2% 0 2% 0;">
-		
-			{% if pagination is empty %}
-				<div>
-					<p class="text-center fs-3" >Aucune actualité pour l'instant</p>
-				</div>
-			{% else %}
-				<div class="container">
-        			<div class="row" data-aos="zoom-in-up" data-aos-duration="3000">
-            		{% for Actualite in pagination %}
-                		<div class="col-lg-4 col-md-6 mb-4">
-                		    <div class="card h-100" style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);" >
-								<img src="/uploads/image/{{ Actualite.ActualiteImage }}" class="img-fluid" alt="Actualite Image" style=" width: 300px;height: 300px; object-fit: cover; display: block; margin: 0 auto;">
-								<div class="card-body">
-                            		<h5 class="card-title text-center">{{ Actualite.ActualiteTitre }}</h5>
-                            		<p class="card-text text-justify">{{ Actualite.ActualiteContenu|slice(0, 90) ~ ' ...' }}</p>
-									<div style="text-align: center;">
-										
-										<div class="d-flex justify-content-end">
-											<a href="{{ path('app_actualite_details', {'id': Actualite.id}) }}" style="text-decoration: none; transition: all 0.4s ease; color: black" onmouseover="this.style.color='#1EC11B'" onmouseout="this.style.color='black'"> 
-												<ion-icon name="arrow-forward-outline" style="font-size: 20px"></ion-icon>
-											</a>
-										</div>
-                            			
-									</div>
-								</div>	
-                    		</div>
-                		</div>
-            		{% endfor %}
-					<div style="margin-left: 45%;">
-					<style>
-						a{
-							color:black	;
-							 text-decoration: none;
-						}
-						span{
-							margin:1%;
-						}
-						
-					</style>
-						{{ knp_pagination_render(pagination) }}
+	<section class="post-grid section pt-0">
+		<div class="container">
+			<div class="row" style="margin:2% 0 2% 0;">
+
+				{% if pagination is empty %}
+					<div>
+						<p class="text-center fs-3">Aucune actualité pour l'instant</p>
 					</div>
-					
-        			</div>
-    			</div>
-			{% endif %}
+				{% else %}
+					<div class="container">
+						<div class="row" data-aos="zoom-in-up" data-aos-duration="3000">
+							{% for Actualite in pagination %}
+								<div class="col-lg-4 col-md-6 mb-4">
+									<div class="card h-100" style="box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
+										<img src="/uploads/image/{{ Actualite.ActualiteImage }}" class="img-fluid" alt="Actualite Image" style=" width: 300px;height: 300px; object-fit: cover; display: block; margin: 0 auto;">
+										<div class="card-body">
+											<h5 class="card-title text-center">{{ Actualite.ActualiteTitre }}</h5>
+											<a href="{{ path('app_actualite_details', {'id': Actualite.id}) }}" style="text-decoration: none; transition: all 0.4s ease; color: black">
+												<p class="card-text text-justify" style="color:#808080">{{ Actualite.ActualiteContenu|slice(0, 90)|raw ~ ' ...' }}</p>
 
-		</div>
-	</div>
-</section>   
+											</a>
 
-{% endblock %}
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+							<div style="margin-left: 45%;">
+								<style>
+									a {
+										color: black;
+										text-decoration: none;
+									}
+									span {
+										margin: 1%;
+									}
+								</style>
+								{{ knp_pagination_render(pagination) }}
+							</div>
+
+
+						</div>
+					{% endif %}
+
+				</div>
+			</div>
+		</section>
+
+	{% endblock %}
