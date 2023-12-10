@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Lora:400,400i|Open+Sans:300,400,600,700,800");
 * {
   margin: 0;
   padding: 0;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
 }
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lora", serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -14,11 +13,14 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Lora", serif;
   color: #000;
   font-weight: 300;
 }
-
+p,
+a {
+  font-family: "Lora", serif;
+}
 h1 {
   font-size: 45px;
   line-height: 61px;
@@ -52,6 +54,10 @@ a {
   text-decoration: none;
   transition: all 0.4s ease;
 }
+
+section {
+  margin-bottom: 5%;
+}
 .link {
   position: relative;
 }
@@ -59,7 +65,7 @@ a {
 .link:after {
   content: "";
   position: absolute;
-  background-color: black;
+  background-color: rgb(75, 75, 75);
   height: 2px;
   width: 0;
   left: 0;
@@ -75,15 +81,24 @@ img {
 }
 
 .navigation {
-  /* border: 1px solid blueviolet; */
   display: block;
   justify-content: end;
 }
 .containt {
-  /* border: 1px solid black; */
   width: 70%;
   display: flex;
   justify-content: space-around;
+}
+.hero {
+  object-fit: cover;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 100px 0;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media only screen and (max-width: 600px) {
   .containt {

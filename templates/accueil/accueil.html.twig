@@ -4,8 +4,9 @@
 {% endblock %}
 
 {% block body %}
+	{# Section Hero #}
 	<section class="section gradient-banner" data-aos="zoom-in" data-aos-duration="2000">
-		<div class="hero" style="object-fit:cover;position: relative; color: #fff; text-align: center; padding: 100px 0; height:400px; background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)), url('{{asset('image/hero11.jpg')}}') ;background-repeat: no-repeat; background-position: center; background-size: cover;display: flex; align-items: center; justify-content: center;">
+		<div class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)), url('{{asset('image/hero11.jpg')}}') ;background-repeat: no-repeat;background-position: center; background-size: cover;">
 			<div id="textCarousel" class="carousel slide" data-ride="carousel">
 				<div class= "carousel-inner">
 					<div class="carousel-item active">
@@ -45,26 +46,26 @@
 			</div>
 		</div>
 	</section>
-	<section class="feature section pt-5" style="margin-bottom:10%;">
+	{# Section Apropos #}
+	<section class="feature section">
 		<div class="container">
-			<h1 class="text-center" data-aos="fade-right" data-aos-duration="3000" style="margin: 5%;">A propos</h1>
 			<div class="row">
 				<div class="col-lg-6 ml-auto align-self-center" style="display: flex; align-items: center;">
 					<div class="feature-content" data-aos="fade-right" data-aos-duration="2000">
-
+						<h1 class="text-center" data-aos="fade-right" data-aos-duration="3000" style="margin: 5%;">A propos de nous</h1>
 						<p class="desc">
 							Créée en Novembre 1991 en vue de la promotion de la protection de l'environnement et du développement économique et social à Madagascar. L'ANAE se spécialise dans la lutte contre l'érosion, la conservation des eaux et des sols, et le développement rural.
 						</p>
-						<div class="d-flex justify-content-center">
-							<a href=" {{path('app_apropos')}} " style="text-decoration: none; transition: all 0.4s ease; color: black" onmouseover="this.style.color='#1EC11B'" onmouseout="this.style.color='black'">
-								<ion-icon name="chevron-down-outline"></ion-icon>
+						<div class="d-flex justify-content-start">
+							<a href=" {{path('app_apropos')}} " style="text-decoration: none; transition: all 0.4s ease; color: black;" onmouseover="this.style.color='#1EC11B'" onmouseout="this.style.color='black'">
+								<span style=" font-weight: 400; vertical-align: middle;"> Voir plus <ion-icon name="arrow-forward-outline" style="font-size: 25px; vertical-align: middle;color: #000000bb;"></ion-icon></span> 
 							</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6 mr-auto justify-content-center">
 					<div class="image-content" data-aos="fade-left" data-aos-duration="2000">
-						<img class="img-fluid" src=" {{asset('image/Apropos.jpg')}} " alt="Objectifs" style="border-radius: 5%; object-fit:cover;	">
+						<img class="img-fluid" src=" {{asset('image/Apropos.jpg')}} " alt="Apropos" style="object-fit:cover;">
 					</div>
 				</div>
 			</div>
@@ -185,32 +186,32 @@
 
 	<script>
 		const toggleAccordion1 = document.getElementById('toggleAccordion1');
-const accordion1 = document.getElementById('accordion1');
-const accordionIcon1 = document.getElementById('accordionIcon1');
+		const accordion1 = document.getElementById('accordion1');
+		const accordionIcon1 = document.getElementById('accordionIcon1');
 
-toggleAccordion1.addEventListener('click', () => {
-if (accordion1.style.display === 'none' || accordion1.style.display === '') {
-accordion1.style.display = 'block';
-accordionIcon1.setAttribute('name', 'chevron-up-outline');
-} else {
-accordion1.style.display = 'none';
-accordionIcon1.setAttribute('name', 'chevron-down-outline');
-}
-});
+		toggleAccordion1.addEventListener('click', () => {
+		if (accordion1.style.display === 'none' || accordion1.style.display === '') {
+		accordion1.style.display = 'block';
+		accordionIcon1.setAttribute('name', 'chevron-up-outline');
+		} else {
+		accordion1.style.display = 'none';
+		accordionIcon1.setAttribute('name', 'chevron-down-outline');
+		}
+		});
 
-const toggleAccordion2 = document.getElementById('toggleAccordion2');
-const accordion2 = document.getElementById('accordion2');
-const accordionIcon2 = document.getElementById('accordionIcon2');
+		const toggleAccordion2 = document.getElementById('toggleAccordion2');
+		const accordion2 = document.getElementById('accordion2');
+		const accordionIcon2 = document.getElementById('accordionIcon2');
 
-toggleAccordion2.addEventListener('click', () => {
-if (accordion2.style.display === 'none' || accordion2.style.display === '') {
-accordion2.style.display = 'block';
-accordionIcon2.setAttribute('name', 'chevron-up-outline');
-} else {
-accordion2.style.display = 'none';
-accordionIcon2.setAttribute('name', 'chevron-down-outline');
-}
-});
+		toggleAccordion2.addEventListener('click', () => {
+		if (accordion2.style.display === 'none' || accordion2.style.display === '') {
+		accordion2.style.display = 'block';
+		accordionIcon2.setAttribute('name', 'chevron-up-outline');
+		} else {
+		accordion2.style.display = 'none';
+		accordionIcon2.setAttribute('name', 'chevron-down-outline');
+		}
+		});
 	</script>
 
 

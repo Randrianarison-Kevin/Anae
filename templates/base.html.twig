@@ -16,8 +16,9 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
-
-
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
 		{% endblock %}
@@ -62,47 +63,7 @@
 		{% block body %}{% endblock %}
 		
 		{# Footer #}
-		<footer>
-            <div class="footer-main" style="margin: 3% 0">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-12 m-md-auto align-self-center">
-                            <div class="block">
-                                <a href="{{ path('app_accueil') }}"><img src="image/logo.png" alt="logo" class= "w-100 h-100"></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
-                            <div class="block-2">
-                                <h6 style=" color:#1EC11B;">Telephone :</h6>
-                                
-                                    +261 34 08 928 08</br>
-                                    +261 33 02 213 75</br>
-                                    +261 32 40 213 75</br>
-                                    +261 22 630 36
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
-                          <div class="block-2">
-                          
-                            <h6 style=" color:#1EC11B;">Adresse :</h6>
-                          
-                            Lot II Y 39 A BIS Ampasanimalo Antananarivo
-                          </div>
-                        </div>
-                        <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
-                          <div class="block-2">
-                            
-                            <h6 style=" color:#1EC11B;">Email :</h6>
-                            anaefoibe@gmail.com
-                          </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center py-4" style="background-color: #1EC11B">
-                <small class="text-white">&copy; <script>document.write(new Date().getFullYear())</script> Anae</small>
-            </div>
-        </footer>
+		
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
             AOS.init();
@@ -110,5 +71,46 @@
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></scri
 	</body>
+	<footer>
+        <div class="footer-main" style="margin: 3% 0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 m-md-auto align-self-center">
+                        <div class="block">
+                            <a href="{{ path('app_accueil') }}"><img src="image/logo.png" alt="logo" class= "w-100 h-100"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+                        <div class="block-2">
+                            <h6 style=" color:#1EC11B;">Telephone :</h6>
+                            
+                                +261 34 08 928 08</br>
+                                +261 33 02 213 75</br>
+                                +261 32 40 213 75</br>
+                                +261 22 630 36
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+                      <div class="block-2">
+                      
+                        <h6 style=" color:#1EC11B;">Adresse :</h6>
+                      
+                        Lot II Y 39 A BIS Ampasanimalo Antananarivo
+                      </div>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-6 mt-5 mt-lg-0">
+                      <div class="block-2">
+                        
+                        <h6 style=" color:#1EC11B;">Email :</h6>
+                        anaefoibe@gmail.com
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center py-4" style="background-color: #1EC11B">
+            <small class="text-white">&copy; <script>document.write(new Date().getFullYear())</script> Anae</small>
+        </div>
+    </footer>
 </html>
 
