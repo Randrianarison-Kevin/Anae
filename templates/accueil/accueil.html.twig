@@ -46,8 +46,9 @@
 			</div>
 		</div>
 	</section>
+
 	{# Section Apropos #}
-	<section class="feature section">
+	<section class=" section">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 ml-auto align-self-center" style="display: flex; align-items: center;">
@@ -71,9 +72,11 @@
 			</div>
 		</div>
 	</section>
-	<section class="section pt-0 position-relative pull-top" style="margin:2%;">
+
+	{# Section Presentation #}
+	{# <section class="section pt-0 position-relative pull-top" style="margin:2%;">
 		<div class="container">
-			<h1 class="text-center" data-aos="fade-right" data-aos-duration="3000">Presentation</h1>
+			<h1 class="text-center" data-aos="fade-right" data-aos-duration="3000">Présentation</h1>
 			<div class="rounded shadow p-5 bg-white">
 				<div class="row" data-aos="flip-right" data-aos-duration="3000">
 					<div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
@@ -103,8 +106,59 @@
 				</div>
 			</div>
 		</div>
+	</section> #}
+	<section class="p-5 feature">
+    	<div class="container">
+        	<h1 class="text-center mb-5" data-aos="zoom-in" data-aos-duration="3000">Présentation</h1>
+        	<div class="row text-center">
+        		<div class="col-md-4 mb-4">
+            		<a href="{{ path('app_equipe') }}" class="presentation">
+						<div class="card pre" data-aos="flip-right" data-aos-duration="3000">
+							<div class="card-pre">		
+									<i class="fas fa-users fa-3x mt-3"></i>
+                					<div class="card-body">
+                    					<h5 class="card-title">
+                    	    				Notre équipe
+                    					</h5>
+                					</div>
+							</div>
+            			</div>
+					</a>
+				</div>
+
+        		<div class="col-md-4 mb-4">
+        		    <a href="{{ path('app_affiliation') }}" class="presentation">
+						<div class="card pre" data-aos="flip-right" data-aos-duration="3000">
+							<div class="card-pre">
+        		    	    	<i class="fas fa-handshake fa-3x mt-3"></i>
+        		    	    	<div class="card-body">
+        		    	    	    <h5 class="card-title">
+        		    	    	        Affiliation
+        		    	    	    </h5>
+        		    	    	</div>
+							</div>
+        		    	</div>
+					</a>
+        		</div>
+        		<div class="col-md-4  mb-4">
+        		    <a href="{{ path('app_competence') }}" class="presentation">
+						<div class="card pre" data-aos="flip-right" data-aos-duration="3000">
+							<div class="card-pre">
+								<i class="fas fa-cogs fa-3x mt-3"></i>
+        		    	    	<div class="card-body">
+        		    	    	    <h5 class="card-title">
+        		    	    	        Compétence
+        		    	    	    </h5>
+        		    	    	</div>
+							</div>
+        		    	</div>
+					</a>
+        		</div>
+        	</div>
+    	</div>
 	</section>
-	<section class="feature section pt-5">
+
+	<section class=" section pt-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 ml-auto justify-content-center">
@@ -125,7 +179,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="feature section pt-5">
+	<section class=" section pt-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 ml-auto align-self-center" style="display: flex; align-items: center;">
@@ -153,7 +207,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="feature section pt-5">
+	<section class=" section pt-5">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 mr-auto justify-content-center">
