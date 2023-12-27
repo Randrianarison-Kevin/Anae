@@ -9,6 +9,7 @@ use App\Entity\Equipe;
 use App\Entity\Image;
 use App\Entity\Media;
 use App\Entity\Realisation;
+use App\Entity\User;
 use App\Entity\Vision;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
